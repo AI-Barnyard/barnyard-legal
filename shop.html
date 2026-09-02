@@ -118,6 +118,10 @@
     font-size: 1.1rem;
     font-weight: 500;
   }
+  .btn-group {
+    display: flex;
+    gap: 0.5rem;
+  }
   .buy {
     background: var(--barn);
     color: var(--paper);
@@ -153,6 +157,12 @@
     margin: 0 auto 2.5rem;
     text-align: center;
   }
+  .more-coming {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
 </style>
 </head>
 <body>
@@ -164,100 +174,60 @@
       <nav class="top"><a href="./index.html">&larr; Back home</a></nav>
     </header>
 
-    <p class="test-note">Checkout is running in Stripe <strong>test mode</strong> while this shop is getting set up &mdash; no real charges yet.</p>
+    <p class="test-note">Checkout is running in Stripe <strong>test mode</strong> while this shop is getting set up &mdash; no real charges yet. Test-mode purchases won&apos;t auto-deliver yet. Email us at <a href="mailto:clawopener@gmail.com">clawopener@gmail.com</a> and we&apos;ll send your template directly.</p>
 
     <div class="grid">
-      <article class="card" data-product-slug="new-grad-job-search-negotiation-kit">
-        <span class="eyebrow">Career Launch</span>
-        <h3>New Grad Job Search Tracker &amp; Salary Negotiation Kit</h3>
-        <p>Everything a new graduate needs to run a real job search: an application tracker with follow-up reminders, an offer comparison sheet (base, bonus, equity, benefits, cost-of-living adjusted), and word-for-word salary negotiation scripts for the most common pushback lines.</p>
-        <div class="card-foot">
-          <span class="price">$19</span>
-          <a class="buy" href="https://buy.stripe.com/test_dRmeVf6aygJa2Q37ehbQY02" target="_blank" rel="noopener">Buy now</a>
-        </div>
-      </article>
-      <article class="card" data-product-slug="resume-linkedin-kit-career-changers">
-        <span class="eyebrow">Career Launch</span>
-        <h3>Resume &amp; LinkedIn Optimization Kit for Career Changers</h3>
-        <p>Built specifically for someone switching industries or roles, where a standard resume template falls short: a transferable-skills worksheet to translate old experience into new-field language, an ATS-friendly resume template, and a LinkedIn headline/About formula.</p>
-        <div class="card-foot">
-          <span class="price">$18</span>
-          <a class="buy" href="https://buy.stripe.com/test_aFa8wR56ueB21LZ9mpbQY09" target="_blank" rel="noopener">Buy now</a>
-        </div>
-      </article>
-      <article class="card" data-product-slug="small-business-launch-brand-kit">
-        <span class="eyebrow">Entrepreneurship</span>
-        <h3>Small Business Launch Checklist &amp; Brand Kit Template</h3>
-        <p>A step-by-step launch checklist (business structure, licenses, business bank account, basic bookkeeping setup) paired with an editable brand kit template for logo variants, color palette, and voice guidelines -- for someone starting a small business, not raising venture funding.</p>
-        <div class="card-foot">
-          <span class="price">$22</span>
-          <a class="buy" href="https://buy.stripe.com/test_7sY7sNfL89gIduH8ilbQY07" target="_blank" rel="noopener">Buy now</a>
-        </div>
-      </article>
-      <article class="card" data-product-slug="freelancer-onboarding-contract-pack">
-        <span class="eyebrow">Freelancing &amp; Skills</span>
-        <h3>Freelancer Onboarding &amp; Client Contract Template Pack</h3>
-        <p>A ready-to-send pack for new freelancers: a client onboarding questionnaire, a scope-of-work template that heads off scope creep, a simple services contract, and a late-payment follow-up sequence. Templates only -- not a substitute for a lawyer on high-value contracts.</p>
-        <div class="card-foot">
-          <span class="price">$24</span>
-          <a class="buy" href="https://buy.stripe.com/test_dRm6oJgPc1Og9eraqtbQY04" target="_blank" rel="noopener">Buy now</a>
-        </div>
-      </article>
-      <article class="card" data-product-slug="family-household-command-center">
-        <span class="eyebrow">Parenting &amp; Home</span>
-        <h3>Family Household Command Center</h3>
-        <p>A single template that runs the household: shared family calendar, rotating chore chart with age-appropriate tasks, weekly meal plan tied to a grocery list, and a &quot;who's picking up the kids&quot; schedule for co-parenting or dual-income households.</p>
-        <div class="card-foot">
-          <span class="price">$14</span>
-          <a class="buy" href="https://buy.stripe.com/test_8x25kFgPc50sduHbuxbQY01" target="_blank" rel="noopener">Buy now</a>
-        </div>
-      </article>
-      <article class="card" data-product-slug="meal-prep-grocery-budget-planner">
-        <span class="eyebrow">Parenting &amp; Home</span>
-        <h3>Home Cook's Meal Prep &amp; Grocery Budget Planner</h3>
-        <p>A weekly meal-prep planner built around a real grocery budget: pick meals, the grocery list and estimated cost build automatically, with a leftover-and-freezer tracker so nothing goes to waste. Includes a family-size scaling guide.</p>
-        <div class="card-foot">
-          <span class="price">$10</span>
-          <a class="buy" href="https://buy.stripe.com/test_00weVfaqO2SkbmzbuxbQY08" target="_blank" rel="noopener">Buy now</a>
-        </div>
-      </article>
       <article class="card" data-product-slug="budgeting-debt-payoff-planner">
         <span class="eyebrow">Personal Finance</span>
         <h3>Budgeting &amp; Debt Payoff Planner</h3>
-        <p>A monthly budget template paired with a debt payoff tracker supporting both the snowball and avalanche methods side by side, so you can see the real dollar and time difference before choosing. Includes an irregular-income variant for freelancers and gig workers.</p>
+        <p>A monthly budget template paired with a debt payoff calculator comparing snowball vs. avalanche methods side by side. See the real dollar and time difference. Includes an irregular-income variant for freelancers and gig workers.</p>
         <div class="card-foot">
           <span class="price">$12</span>
-          <a class="buy" href="https://buy.stripe.com/test_14A5kF1Ui8cE76j569bQY06" target="_blank" rel="noopener">Buy now</a>
+          <div class="btn-group">
+            <a class="buy" href="https://buy.stripe.com/test_14A5kF1Ui8cE76j569bQY06" target="_blank" rel="noopener">Buy</a>
+            <a class="buy" href="./downloads/budgeting-debt-payoff-planner.html" target="_blank">Preview</a>
+          </div>
         </div>
       </article>
       <article class="card" data-product-slug="investing-basics-first-portfolio-workbook">
         <span class="eyebrow">Personal Finance</span>
         <h3>Investing Basics Workbook: Building Your First Portfolio</h3>
-        <p>A plain-language workbook for someone opening their first brokerage account: how index funds actually work, a risk-tolerance worksheet, an asset-allocation calculator by age and goal, and a monthly contribution planner. Educational only -- not personalized investment advice.</p>
+        <p>A plain-language workbook for someone opening their first brokerage account: how index funds work, a risk-tolerance worksheet, asset-allocation calculator, and contribution planner. Educational only &mdash; not personalized investment advice.</p>
         <div class="card-foot">
           <span class="price">$15</span>
-          <a class="buy" href="https://buy.stripe.com/test_28E00l9mKgJabmzaqtbQY03" target="_blank" rel="noopener">Buy now</a>
+          <div class="btn-group">
+            <a class="buy" href="https://buy.stripe.com/test_28E00l9mKgJabmzaqtbQY03" target="_blank" rel="noopener">Buy</a>
+            <a class="buy" href="./downloads/investing-basics-workbook.html" target="_blank">Preview</a>
+          </div>
         </div>
       </article>
-      <article class="card" data-product-slug="30-day-learn-to-code-roadmap">
-        <span class="eyebrow">Skill Building</span>
-        <h3>30-Day Learn-to-Code Roadmap &amp; Project Tracker</h3>
-        <p>A day-by-day roadmap for a complete beginner learning to code: which free resources to use each week, three small projects to actually build (not just tutorials to watch), and a tracker to see real progress instead of guessing if you're behind.</p>
+      <article class="card" data-product-slug="new-grad-job-search-negotiation-kit">
+        <span class="eyebrow">Career Launch</span>
+        <h3>New Grad Job Search Tracker &amp; Salary Negotiation Kit</h3>
+        <p>Everything a new graduate needs: an application tracker, an offer comparison calculator with cost-of-living adjustment, and word-for-word salary negotiation scripts for the most common employer pushback lines.</p>
         <div class="card-foot">
-          <span class="price">$12</span>
-          <a class="buy" href="https://buy.stripe.com/test_aFa8wRaqO1OgbmzbuxbQY05" target="_blank" rel="noopener">Buy now</a>
+          <span class="price">$19</span>
+          <div class="btn-group">
+            <a class="buy" href="https://buy.stripe.com/test_dRmeVf6aygJa2Q37ehbQY02" target="_blank" rel="noopener">Buy</a>
+            <a class="buy" href="./downloads/new-grad-job-search-negotiation-kit.html" target="_blank">Preview</a>
+          </div>
         </div>
       </article>
       <article class="card" data-product-slug="student-study-planner-habit-tracker">
         <span class="eyebrow">Student Life</span>
         <h3>Student Study Planner &amp; Habit Tracker</h3>
-        <p>A semester-length digital planner for students: weekly study-block scheduling, a spaced-repetition review tracker, assignment deadlines, and a habit tracker for sleep/exercise/screen-time. Built for the reality of juggling five classes, not an idealized routine.</p>
+        <p>A semester-length planner for students: weekly study-load calculator with overload detection, spaced-repetition review scheduler (1&ndash;3&ndash;7&ndash;16&ndash;35 day spacing), and daily habit grid for sleep/exercise/screen-time.</p>
         <div class="card-foot">
           <span class="price">$9</span>
-          <a class="buy" href="https://buy.stripe.com/test_7sY7sNgPccsU2Q3dCFbQY00" target="_blank" rel="noopener">Buy now</a>
+          <div class="btn-group">
+            <a class="buy" href="https://buy.stripe.com/test_7sY7sNgPccsU2Q3dCFbQY00" target="_blank" rel="noopener">Buy</a>
+            <a class="buy" href="./downloads/student-study-planner-habit-tracker.html" target="_blank">Preview</a>
+          </div>
         </div>
       </article>
     </div>
+
+    <p class="more-coming">More templates coming soon. These are production-ready and shipping immediately.</p>
 
     <footer class="site">
       <p>Barnyard Templates &middot; <a href="./privacy.html">Privacy Policy</a> &middot; <a href="mailto:clawopener@gmail.com">Contact</a></p>

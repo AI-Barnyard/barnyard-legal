@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang=&rdquo;en&rdquo;>
+<head>
+<meta charset=&rdquo;utf-8&rdquo;>
+<meta name=&rdquo;viewport&rdquo; content=&rdquo;width=device-width, initial-scale=1&rdquo;>
+<title>Investing Basics Workbook</title>
+<link rel=&rdquo;stylesheet&rdquo; href=&rdquo;https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap&rdquo;>
+<style>
+  :root {
+    --paper: #f5f0e6;
+    --paper-alt: #ede4d3;
+    --ink: #2b2320;
+    --ink-soft: #5b4f45;
+    --barn: #8c3b2e;
+    --barn-deep: #6b2a21;
+    --gold: #b98a3e;
+    --line: #d8cbb3;
+    --stock: #8c3b2e;
+    --bond: #b98a3e;
+    --cash: #7d8a6a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme=&rdquo;light&rdquo;]) {
+      --paper: #221d19; --paper-alt: #2b241f; --ink: #ede3d3; --ink-soft: #b9ac97;
+      --barn: #e07856; --barn-deep: #f09274; --gold: #d9a94f; --line: #3c332b;
+      --stock: #e07856; --bond: #d9a94f; --cash: #9fb083;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: &rdquo;Karla&rdquo;, -apple-system, &rdquo;Segoe UI&rdquo;, sans-serif; line-height: 1.6;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  .mark {
+    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 700; font-size: 0.95rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn);
+    border: 1.5px solid var(--barn); border-radius: 3px; padding: 0.15rem 0.55rem;
+    display: inline-block; transform: rotate(-2deg); margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 650;
+    font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.1; margin: 0 0 0.6rem;
+    text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .sub { color: var(--ink-soft); font-size: 1.05rem; max-width: 55ch; margin: 0 0 1.5rem; }
+  .disclaimer {
+    background: var(--paper-alt); border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0; padding: 0.9rem 1.15rem;
+    font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 3rem;
+  }
+  section { border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 2.5rem; }
+  h2 {
+    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 600; font-size: 1.5rem;
+    margin: 0 0 0.4rem; display: flex; align-items: baseline; gap: 0.6rem;
+  }
+  h2 .num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 0.95rem; color: var(--barn); }
+  .lead { color: var(--ink-soft); margin: 0 0 1.5rem; }
+  .card {
+    background: var(--paper-alt); border: 1px solid var(--line);
+    border-radius: 10px; padding: 1.4rem;
+  }
+  .q { margin-bottom: 1.25rem; }
+  .q:last-child { margin-bottom: 0; }
+  .q p { margin: 0 0 0.6rem; font-weight: 500; }
+  .opts { display: flex; flex-direction: column; gap: 0.4rem; }
+  label.opt {
+    display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.94rem;
+    color: var(--ink-soft); cursor: pointer; padding: 0.35rem 0.5rem;
+    border-radius: 6px; transition: background 0.12s ease;
+  }
+  label.opt:hover { background: rgba(140,59,46,0.06); }
+  input[type=&rdquo;radio&rdquo;], input[type=&rdquo;number&rdquo;] { accent-color: var(--barn); }
+  input[type=&rdquo;number&rdquo;] {
+    font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 1rem;
+    padding: 0.5rem 0.65rem; border: 1px solid var(--line); border-radius: 7px;
+    background: var(--paper); color: var(--ink); width: 100%;
+  }
+  input[type=&rdquo;number&rdquo;]:focus-visible, label.opt:focus-within {
+    outline: 2px solid var(--gold); outline-offset: 1px;
+  }
+  .field { margin-bottom: 1rem; }
+  .field label { display: block; font-size: 0.82rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+  .result {
+    margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px dashed var(--line);
+  }
+  .result-label {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .verdict { font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .alloc-bar {
+    display: flex; height: 34px; border-radius: 7px; overflow: hidden;
+    margin: 1rem 0 0.6rem; border: 1px solid var(--line);
+  }
+  .alloc-bar span {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 700; color: #fff;
+    transition: width 0.35s ease;
+  }
+  .seg-stock { background: var(--stock); }
+  .seg-bond { background: var(--bond); }
+  .seg-cash { background: var(--cash); }
+  .legend { display: flex; gap: 1.1rem; flex-wrap: wrap; font-size: 0.85rem; color: var(--ink-soft); }
+  .legend i { width: 11px; height: 11px; border-radius: 2px; display: inline-block; margin-right: 0.35rem; }
+  table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.93rem; }
+  th, td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--line); }
+  th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+  td.num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; text-align: right; font-variant-numeric: tabular-nums; }
+  dl { margin: 0; }
+  dt { font-weight: 700; margin-top: 1rem; }
+  dd { margin: 0.2rem 0 0; color: var(--ink-soft); font-size: 0.94rem; }
+  footer {
+    margin-top: 4rem; padding-top: 1.75rem; border-top: 1px solid var(--line);
+    font-size: 0.85rem; color: var(--ink-soft); display: flex;
+    justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;
+  }
+  @media print {
+    body { background: #fff; }
+    .wrap { padding: 0; max-width: none; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class=&rdquo;wrap&rdquo;>
+  <span class=&rdquo;mark&rdquo;>Barnyard Templates</span>
+  <h1>Investing Basics Workbook</h1>
+  <p class=&rdquo;sub&rdquo;>Building your first portfolio &mdash; a plain-language workbook for someone about to open their first brokerage account.</p>
+
+  <div class=&rdquo;disclaimer&rdquo;>
+    <strong>Educational only.</strong> This workbook explains common concepts and uses widely-published rules of thumb to illustrate them. It is not personalized investment advice, and nothing here accounts for your full financial picture. For decisions that matter, talk to a licensed financial advisor or tax professional.
+  </div>
+
+  <section style=&rdquo;border-top:none;padding-top:0;margin-top:0&rdquo;>
+    <h2><span class=&rdquo;num&rdquo;>01</span>What you're actually buying</h2>
+    <p class=&rdquo;lead&rdquo;>Three terms cover most of what a beginner needs.</p>
+    <div class=&rdquo;card&rdquo;>
+      <dl>
+        <dt>A stock</dt>
+        <dd>A share of ownership in one company. If that one company does badly, so do you. This is why holding only a handful of individual stocks is riskier than it looks.</dd>
+        <dt>An index fund</dt>
+        <dd>A single fund that holds hundreds or thousands of companies at once, tracking a whole market (like the S&amp;P 500). One purchase spreads your money across everything in that index &mdash; that spread is the entire point.</dd>
+        <dt>A bond</dt>
+        <dd>A loan to a government or company that pays interest. Historically less volatile than stocks and lower returning. Its job in a portfolio is to cushion the drops, not to make you rich.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class=&rdquo;num&rdquo;>02</span>Risk tolerance worksheet</h2>
+    <p class=&rdquo;lead&rdquo;>Answer honestly about what you'd actually do, not what sounds brave.</p>
+    <div class=&rdquo;card&rdquo;>
+      <div class=&rdquo;q&rdquo;>
+        <p>1. Your portfolio drops 25% in a month. You:</p>
+        <div class=&rdquo;opts&rdquo;>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q1&rdquo; value=&rdquo;1&rdquo;> Sell most of it &mdash; I can't watch that happen</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q1&rdquo; value=&rdquo;2&rdquo;> Sell some and wait it out</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q1&rdquo; value=&rdquo;3&rdquo;> Change nothing</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q1&rdquo; value=&rdquo;4&rdquo;> Buy more while it's cheap</label>
+        </div>
+      </div>
+      <div class=&rdquo;q&rdquo;>
+        <p>2. When will you need this money?</p>
+        <div class=&rdquo;opts&rdquo;>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q2&rdquo; value=&rdquo;1&rdquo;> Within 3 years</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q2&rdquo; value=&rdquo;2&rdquo;> 3&ndash;10 years</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q2&rdquo; value=&rdquo;3&rdquo;> 10&ndash;20 years</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q2&rdquo; value=&rdquo;4&rdquo;> 20+ years / retirement</label>
+        </div>
+      </div>
+      <div class=&rdquo;q&rdquo;>
+        <p>3. If you lost your income tomorrow, how many months of expenses do you have saved separately?</p>
+        <div class=&rdquo;opts&rdquo;>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q3&rdquo; value=&rdquo;1&rdquo;> Less than 1</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q3&rdquo; value=&rdquo;2&rdquo;> 1&ndash;3</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q3&rdquo; value=&rdquo;3&rdquo;> 3&ndash;6</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q3&rdquo; value=&rdquo;4&rdquo;> 6+</label>
+        </div>
+      </div>
+      <div class=&rdquo;q&rdquo;>
+        <p>4. Your experience with investing so far:</p>
+        <div class=&rdquo;opts&rdquo;>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q4&rdquo; value=&rdquo;1&rdquo;> None &mdash; this is my first account</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q4&rdquo; value=&rdquo;2&rdquo;> A retirement account I don't really manage</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q4&rdquo; value=&rdquo;3&rdquo;> I've invested through a full market drop before</label>
+          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q4&rdquo; value=&rdquo;4&rdquo;> Comfortable, I follow it closely</label>
+        </div>
+      </div>
+      <div class=&rdquo;result&rdquo;>
+        <div class=&rdquo;result-label&rdquo;>Your risk profile</div>
+        <div class=&rdquo;verdict&rdquo; id=&rdquo;riskVerdict&rdquo;>Answer the four questions above</div>
+        <p id=&rdquo;riskNote&rdquo; style=&rdquo;margin:0;color:var(--ink-soft);font-size:0.93rem&rdquo;></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class=&rdquo;num&rdquo;>03</span>Allocation illustration</h2>
+    <p class=&rdquo;lead&rdquo;>A starting point built from the common &rdquo;110 minus your age&rdquo; stock/bond rule of thumb, then nudged by your risk answers above. A rule of thumb is a conversation starter, not a recommendation.</p>
+    <div class=&rdquo;card&rdquo;>
+      <div class=&rdquo;field&rdquo; style=&rdquo;max-width:200px&rdquo;>
+        <label for=&rdquo;age&rdquo;>Your age</label>
+        <input type=&rdquo;number&rdquo; id=&rdquo;age&rdquo; min=&rdquo;16&rdquo; max=&rdquo;100&rdquo; value=&rdquo;30&rdquo;>
+      </div>
+      <div class=&rdquo;alloc-bar&rdquo; id=&rdquo;allocBar&rdquo;>
+        <span class=&rdquo;seg-stock&rdquo; style=&rdquo;width:80%&rdquo;>80%</span>
+        <span class=&rdquo;seg-bond&rdquo; style=&rdquo;width:15%&rdquo;>15%</span>
+        <span class=&rdquo;seg-cash&rdquo; style=&rdquo;width:5%&rdquo;>5%</span>
+      </div>
+      <div class=&rdquo;legend&rdquo;>
+        <span><i class=&rdquo;seg-stock&rdquo; style=&rdquo;background:var(--stock)&rdquo;></i>Stocks / stock index funds</span>
+        <span><i class=&rdquo;seg-bond&rdquo; style=&rdquo;background:var(--bond)&rdquo;></i>Bonds</span>
+        <span><i class=&rdquo;seg-cash&rdquo; style=&rdquo;background:var(--cash)&rdquo;></i>Cash</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class=&rdquo;num&rdquo;>04</span>Monthly contribution projector</h2>
+    <p class=&rdquo;lead&rdquo;>What consistent contributions look like over time. Uses a fixed annual return you choose &mdash; real markets don't return a smooth number, so treat these as illustrations of <em>compounding</em>, not forecasts.</p>
+    <div class=&rdquo;card&rdquo;>
+      <div class=&rdquo;grid2&rdquo;>
+        <div class=&rdquo;field&rdquo;>
+          <label for=&rdquo;start&rdquo;>Starting amount ($)</label>
+          <input type=&rdquo;number&rdquo; id=&rdquo;start&rdquo; min=&rdquo;0&rdquo; step=&rdquo;100&rdquo; value=&rdquo;1000&rdquo;>
+        </div>
+        <div class=&rdquo;field&rdquo;>
+          <label for=&rdquo;monthly&rdquo;>Monthly contribution ($)</label>
+          <input type=&rdquo;number&rdquo; id=&rdquo;monthly&rdquo; min=&rdquo;0&rdquo; step=&rdquo;25&rdquo; value=&rdquo;250&rdquo;>
+        </div>
+        <div class=&rdquo;field&rdquo;>
+          <label for=&rdquo;rate&rdquo;>Assumed annual return (%)</label>
+          <input type=&rdquo;number&rdquo; id=&rdquo;rate&rdquo; min=&rdquo;0&rdquo; max=&rdquo;20&rdquo; step=&rdquo;0.5&rdquo; value=&rdquo;7&rdquo;>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>After</th><th style=&rdquo;text-align:right&rdquo;>You contributed</th><th style=&rdquo;text-align:right&rdquo;>Projected value</th><th style=&rdquo;text-align:right&rdquo;>Growth</th></tr>
+        </thead>
+        <tbody id=&rdquo;projRows&rdquo;></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class=&rdquo;num&rdquo;>05</span>Before you buy anything &mdash; checklist</h2>
+    <div class=&rdquo;card&rdquo;>
+      <dl>
+        <dt>☐ High-interest debt handled first</dt>
+        <dd>A credit card at 24% reliably costs you more than a portfolio is likely to make. Paying it down is the higher-certainty return.</dd>
+        <dt>☐ Emergency fund exists, separately</dt>
+        <dd>If an unexpected bill forces you to sell during a downturn, you've locked in the loss. Cash reserve is what prevents that.</dd>
+        <dt>☐ Employer match captured</dt>
+        <dd>If your job matches 401(k) contributions, that match is part of your compensation. Not taking it is leaving pay on the table.</dd>
+        <dt>☐ You know the fund's expense ratio</dt>
+        <dd>An expense ratio is the annual fee, as a % of your balance. The difference between 0.03% and 0.75% compounds into real money over decades.</dd>
+        <dt>☐ You have a contribution schedule, not a timing plan</dt>
+        <dd>Deciding &rdquo;$X on the 1st of each month&rdquo; removes the hardest repeated decision &mdash; when to buy.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <span>Barnyard Templates · Investing Basics Workbook v1</span>
+    <span>Educational use only &mdash; not investment advice</span>
+  </footer>
+</div>
+
+<script>
+  const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+  function riskScore() {
+    let total = 0, answered = 0;
+    ['q1','q2','q3','q4'].forEach((q) => {
+      const el = document.querySelector('input[name=&rdquo;' + q + '&rdquo;]:checked');
+      if (el) { total += Number(el.value); answered++; }
+    });
+    return { total, answered };
+  }
+
+  function updateRisk() {
+    const { total, answered } = riskScore();
+    const verdict = document.getElementById('riskVerdict');
+    const note = document.getElementById('riskNote');
+    if (answered < 4) {
+      verdict.textContent = 'Answer the four questions above';
+      note.textContent = '';
+      updateAlloc();
+      return;
+    }
+    let label, text;
+    if (total <= 7) {
+      label = 'Conservative';
+      text = 'Your answers point to a shorter time horizon or a lower tolerance for drops. That usually argues for holding more in bonds and cash than a rule of thumb alone would suggest.';
+    } else if (total <= 11) {
+      label = 'Balanced';
+      text = 'Your answers sit in the middle &mdash; some room for growth, but a real need for the ride to be smoother than an all-stock portfolio would be.';
+    } else {
+      label = 'Growth-oriented';
+      text = 'Long horizon and comfort with volatility. The main risk for this profile is overestimating your own calm during an actual downturn &mdash; the 25% question is worth revisiting after you live through one.';
+    }
+    verdict.textContent = label;
+    note.textContent = text;
+    updateAlloc();
+  }
+
+  function updateAlloc() {
+    const age = Math.min(100, Math.max(16, Number(document.getElementById('age').value) || 30));
+    const { total, answered } = riskScore();
+    let stock = Math.max(20, Math.min(95, 110 - age));
+    if (answered === 4) {
+      if (total <= 7) stock -= 15;
+      else if (total >= 12) stock += 8;
+    }
+    stock = Math.max(15, Math.min(95, Math.round(stock)));
+    const cash = answered === 4 && total <= 7 ? 10 : 5;
+    const bond = Math.max(0, 100 - stock - cash);
+    const bar = document.getElementById('allocBar');
+    bar.innerHTML =
+      '<span class=&rdquo;seg-stock&rdquo; style=&rdquo;width:' + stock + '%&rdquo;>' + stock + '%</span>' +
+      '<span class=&rdquo;seg-bond&rdquo; style=&rdquo;width:' + bond + '%&rdquo;>' + (bond >= 8 ? bond + '%' : '') + '</span>' +
+      '<span class=&rdquo;seg-cash&rdquo; style=&rdquo;width:' + cash + '%&rdquo;>' + (cash >= 8 ? cash + '%' : '') + '</span>';
+  }
+
+  function updateProjection() {
+    const start = Number(document.getElementById('start').value) || 0;
+    const monthly = Number(document.getElementById('monthly').value) || 0;
+    const rate = (Number(document.getElementById('rate').value) || 0) / 100;
+    const r = rate / 12;
+    const rows = [5, 10, 20, 30].map((years) => {
+      const n = years * 12;
+      const fvStart = start * Math.pow(1 + r, n);
+      const fvContrib = r === 0 ? monthly * n : monthly * ((Math.pow(1 + r, n) - 1) / r);
+      const value = fvStart + fvContrib;
+      const contributed = start + monthly * n;
+      return { years, contributed, value, growth: value - contributed };
+    });
+    document.getElementById('projRows').innerHTML = rows
+      .map((x) =>
+        '<tr><td>' + x.years + ' years</td>' +
+        '<td class=&rdquo;num&rdquo;>' + fmt(x.contributed) + '</td>' +
+        '<td class=&rdquo;num&rdquo;>' + fmt(x.value) + '</td>' +
+        '<td class=&rdquo;num&rdquo;>' + fmt(x.growth) + '</td></tr>'
+      )
+      .join('');
+  }
+
+  document.querySelectorAll('input[type=&rdquo;radio&rdquo;]').forEach((el) => el.addEventListener('change', updateRisk));
+  document.getElementById('age').addEventListener('input', updateAlloc);
+  ['start', 'monthly', 'rate'].forEach((id) =>
+    document.getElementById(id).addEventListener('input', updateProjection)
+  );
+
+  updateRisk();
+  updateProjection();
+</script>
+</body>
+</html>
