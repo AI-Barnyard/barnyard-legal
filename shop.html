@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barnyard Templates Shop</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,560;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #f5f0e6;
+    --paper-alt: #ede4d3;
+    --ink: #2b2320;
+    --ink-soft: #5b4f45;
+    --barn: #8c3b2e;
+    --barn-deep: #6b2a21;
+    --gold: #b98a3e;
+    --line: #d8cbb3;
+    --focus: #2b6cb0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #221d19;
+      --paper-alt: #2b241f;
+      --ink: #ede3d3;
+      --ink-soft: #b9ac97;
+      --barn: #e07856;
+      --barn-deep: #f09274;
+      --gold: #d9a94f;
+      --line: #3c332b;
+      --focus: #7db3ea;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #221d19;
+    --paper-alt: #2b241f;
+    --ink: #ede3d3;
+    --ink-soft: #b9ac97;
+    --barn: #e07856;
+    --barn-deep: #f09274;
+    --gold: #d9a94f;
+    --line: #3c332b;
+    --focus: #7db3ea;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Karla", -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  header.site { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; margin-bottom: 3rem; }
+  .mark {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 560;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--barn);
+    border: 1.5px solid var(--barn);
+    border-radius: 3px;
+    padding: 0.15rem 0.6rem;
+    transform: rotate(-2deg);
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 560;
+    font-size: clamp(2rem, 4.5vw, 2.6rem);
+    margin: 0;
+    text-wrap: balance;
+  }
+  header.site p { color: var(--ink-soft); max-width: 46ch; margin: 0; }
+  nav.top { font-size: 0.9rem; }
+  nav.top a { color: var(--ink-soft); text-decoration: none; }
+  nav.top a:hover { color: var(--barn); text-decoration: underline; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--paper-alt);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .card h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 650;
+    font-size: 1.15rem;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .card p { font-size: 0.92rem; color: var(--ink-soft); margin: 0; flex-grow: 1; }
+  .card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
+  }
+  .price {
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .buy {
+    background: var(--barn);
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 7px;
+    transition: background 0.15s ease;
+  }
+  .buy:hover { background: var(--barn-deep); }
+  a:focus-visible, button:focus-visible, .buy:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  footer.site {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+  footer.site a { color: var(--ink-soft); }
+  .test-note {
+    background: var(--paper-alt);
+    border: 1px dashed var(--gold);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <span class="mark">B</span>
+      <h1>Barnyard Templates</h1>
+      <p>Digital templates &amp; tools that save you time. New drops weekly.</p>
+      <nav class="top"><a href="./index.html">&larr; Back home</a></nav>
+    </header>
+
+    <p class="test-note">Checkout is running in Stripe <strong>test mode</strong> while this shop is getting set up &mdash; no real charges yet.</p>
+
+    <div class="grid">
+      <article class="card" data-product-slug="new-grad-job-search-negotiation-kit">
+        <span class="eyebrow">Career Launch</span>
+        <h3>New Grad Job Search Tracker &amp; Salary Negotiation Kit</h3>
+        <p>Everything a new graduate needs to run a real job search: an application tracker with follow-up reminders, an offer comparison sheet (base, bonus, equity, benefits, cost-of-living adjusted), and word-for-word salary negotiation scripts for the most common pushback lines.</p>
+        <div class="card-foot">
+          <span class="price">$19</span>
+          <a class="buy" href="https://buy.stripe.com/test_dRmeVf6aygJa2Q37ehbQY02" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+      <article class="card" data-product-slug="resume-linkedin-kit-career-changers">
+        <span class="eyebrow">Career Launch</span>
+        <h3>Resume &amp; LinkedIn Optimization Kit for Career Changers</h3>
+        <p>Built specifically for someone switching industries or roles, where a standard resume template falls short: a transferable-skills worksheet to translate old experience into new-field language, an ATS-friendly resume template, and a LinkedIn headline/About formula.</p>
+        <div class="card-foot">
+          <span class="price">$18</span>
+          <a class="buy" href="https://buy.stripe.com/test_aFa8wR56ueB21LZ9mpbQY09" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+      <article class="card" data-product-slug="small-business-launch-brand-kit">
+        <span class="eyebrow">Entrepreneurship</span>
+        <h3>Small Business Launch Checklist &amp; Brand Kit Template</h3>
+        <p>A step-by-step launch checklist (business structure, licenses, business bank account, basic bookkeeping setup) paired with an editable brand kit template for logo variants, color palette, and voice guidelines -- for someone starting a small business, not raising venture funding.</p>
+        <div class="card-foot">
+          <span class="price">$22</span>
+          <a class="buy" href="https://buy.stripe.com/test_7sY7sNfL89gIduH8ilbQY07" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+      <article class="card" data-product-slug="freelancer-onboarding-contract-pack">
+        <span class="eyebrow">Freelancing &amp; Skills</span>
+        <h3>Freelancer Onboarding &amp; Client Contract Template Pack</h3>
+        <p>A ready-to-send pack for new freelancers: a client onboarding questionnaire, a scope-of-work template that heads off scope creep, a simple services contract, and a late-payment follow-up sequence. Templates only -- not a substitute for a lawyer on high-value contracts.</p>
+        <div class="card-foot">
+          <span class="price">$24</span>
+          <a class="buy" href="https://buy.stripe.com/test_dRm6oJgPc1Og9eraqtbQY04" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+      <article class="card" data-product-slug="family-household-command-center">
+        <span class="eyebrow">Parenting &amp; Home</span>
+        <h3>Family Household Command Center</h3>
+        <p>A single template that runs the household: shared family calendar, rotating chore chart with age-appropriate tasks, weekly meal plan tied to a grocery list, and a &quot;who's picking up the kids&quot; schedule for co-parenting or dual-income households.</p>
+        <div class="card-foot">
+          <span class="price">$14</span>
+          <a class="buy" href="https://buy.stripe.com/test_8x25kFgPc50sduHbuxbQY01" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+      <article class="card" data-product-slug="meal-prep-grocery-budget-planner">
+        <span class="eyebrow">Parenting &amp; Home</span>
+        <h3>Home Cook's Meal Prep &amp; Grocery Budget Planner</h3>
+        <p>A weekly meal-prep planner built around a real grocery budget: pick meals, the grocery list and estimated cost build automatically, with a leftover-and-freezer tracker so nothing goes to waste. Includes a family-size scaling guide.</p>
+        <div class="card-foot">
+          <span class="price">$10</span>
+          <a class="buy" href="https://buy.stripe.com/test_00weVfaqO2SkbmzbuxbQY08" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+      <article class="card" data-product-slug="budgeting-debt-payoff-planner">
+        <span class="eyebrow">Personal Finance</span>
+        <h3>Budgeting &amp; Debt Payoff Planner</h3>
+        <p>A monthly budget template paired with a debt payoff tracker supporting both the snowball and avalanche methods side by side, so you can see the real dollar and time difference before choosing. Includes an irregular-income variant for freelancers and gig workers.</p>
+        <div class="card-foot">
+          <span class="price">$12</span>
+          <a class="buy" href="https://buy.stripe.com/test_14A5kF1Ui8cE76j569bQY06" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+      <article class="card" data-product-slug="investing-basics-first-portfolio-workbook">
+        <span class="eyebrow">Personal Finance</span>
+        <h3>Investing Basics Workbook: Building Your First Portfolio</h3>
+        <p>A plain-language workbook for someone opening their first brokerage account: how index funds actually work, a risk-tolerance worksheet, an asset-allocation calculator by age and goal, and a monthly contribution planner. Educational only -- not personalized investment advice.</p>
+        <div class="card-foot">
+          <span class="price">$15</span>
+          <a class="buy" href="https://buy.stripe.com/test_28E00l9mKgJabmzaqtbQY03" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+      <article class="card" data-product-slug="30-day-learn-to-code-roadmap">
+        <span class="eyebrow">Skill Building</span>
+        <h3>30-Day Learn-to-Code Roadmap &amp; Project Tracker</h3>
+        <p>A day-by-day roadmap for a complete beginner learning to code: which free resources to use each week, three small projects to actually build (not just tutorials to watch), and a tracker to see real progress instead of guessing if you're behind.</p>
+        <div class="card-foot">
+          <span class="price">$12</span>
+          <a class="buy" href="https://buy.stripe.com/test_aFa8wRaqO1OgbmzbuxbQY05" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+      <article class="card" data-product-slug="student-study-planner-habit-tracker">
+        <span class="eyebrow">Student Life</span>
+        <h3>Student Study Planner &amp; Habit Tracker</h3>
+        <p>A semester-length digital planner for students: weekly study-block scheduling, a spaced-repetition review tracker, assignment deadlines, and a habit tracker for sleep/exercise/screen-time. Built for the reality of juggling five classes, not an idealized routine.</p>
+        <div class="card-foot">
+          <span class="price">$9</span>
+          <a class="buy" href="https://buy.stripe.com/test_7sY7sNgPccsU2Q3dCFbQY00" target="_blank" rel="noopener">Buy now</a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="site">
+      <p>Barnyard Templates &middot; <a href="./privacy.html">Privacy Policy</a> &middot; <a href="mailto:clawopener@gmail.com">Contact</a></p>
+    </footer>
+  </div>
+</body>
+</html>
