@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Barnyard Templates</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,560;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #f5f0e6;
+    --paper-alt: #ede4d3;
+    --ink: #2b2320;
+    --ink-soft: #5b4f45;
+    --barn: #8c3b2e;
+    --barn-deep: #6b2a21;
+    --gold: #b98a3e;
+    --line: #d8cbb3;
+    --focus: #2b6cb0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #221d19;
+      --paper-alt: #2b241f;
+      --ink: #ede3d3;
+      --ink-soft: #b9ac97;
+      --barn: #e07856;
+      --barn-deep: #f09274;
+      --gold: #d9a94f;
+      --line: #3c332b;
+      --focus: #7db3ea;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #221d19;
+    --paper-alt: #2b241f;
+    --ink: #ede3d3;
+    --ink-soft: #b9ac97;
+    --barn: #e07856;
+    --barn-deep: #f09274;
+    --gold: #d9a94f;
+    --line: #3c332b;
+    --focus: #7db3ea;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Karla", -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  header.site { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.85rem; margin-bottom: 2.25rem; }
+  .mark {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 650;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--barn);
+    border: 1.5px solid var(--barn);
+    border-radius: 3px;
+    padding: 0.2rem 0.7rem;
+    transform: rotate(-2deg);
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 560;
+    font-size: 1.55rem;
+    margin: 0;
+    text-wrap: balance;
+  }
+  header.site p { color: var(--ink-soft); font-size: 0.92rem; max-width: 34ch; margin: 0; }
+  .note {
+    background: var(--paper-alt);
+    border: 1px dashed var(--gold);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+  .stack { display: flex; flex-direction: column; gap: 1rem; }
+  .item {
+    background: var(--paper-alt);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.15rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .item-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
+  .item h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 650;
+    font-size: 1.05rem;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .price {
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--barn);
+    white-space: nowrap;
+  }
+  .item p.hook { font-size: 0.87rem; color: var(--ink-soft); margin: 0; }
+  .actions { display: flex; gap: 0.6rem; margin-top: 0.35rem; }
+  .buy {
+    flex: 1;
+    background: var(--barn);
+    color: var(--paper);
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 0.75rem 1rem;
+    border-radius: 9px;
+    transition: background 0.15s ease;
+  }
+  .buy:hover { background: var(--barn-deep); }
+  .preview {
+    text-decoration: none;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    white-space: nowrap;
+  }
+  .preview:hover { color: var(--barn); border-color: var(--barn); }
+  a:focus-visible, .buy:focus-visible, .preview:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  footer.site {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+  footer.site a { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <span class="mark">B</span>
+      <h1>Barnyard Templates</h1>
+      <p>Tap a template to preview it, or buy straight from here.</p>
+    </header>
+
+    <p class="note">Checkout runs in Stripe <strong>test mode</strong> right now &mdash; no real charges. Once live, completing payment sends your file automatically; until then, email <a href="mailto:clawopener@gmail.com" style="color:var(--barn)">clawopener@gmail.com</a> after a test purchase and we'll send it directly.</p>
+
+    <div class="stack">
+      <article class="item">
+        <div class="item-head">
+          <h2>Investing Basics Workbook</h2>
+          <span class="price">$15</span>
+        </div>
+        <p class="hook">Your first brokerage account, explained plainly &mdash; risk worksheet, allocation calculator, contribution projector.</p>
+        <div class="actions">
+          <a class="preview" href="./downloads/investing-basics-workbook.html" target="_blank" rel="noopener">Preview</a>
+          <a class="buy" href="https://buy.stripe.com/test_28E00l9mKgJabmzaqtbQY03" target="_blank" rel="noopener">Buy &mdash; $15</a>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <h2>Budgeting &amp; Debt Payoff Planner</h2>
+          <span class="price">$12</span>
+        </div>
+        <p class="hook">See snowball vs. avalanche side by side in real dollars and months, not just theory.</p>
+        <div class="actions">
+          <a class="preview" href="./downloads/budgeting-debt-payoff-planner.html" target="_blank" rel="noopener">Preview</a>
+          <a class="buy" href="https://buy.stripe.com/test_14A5kF1Ui8cE76j569bQY06" target="_blank" rel="noopener">Buy &mdash; $12</a>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <h2>New Grad Job Search Kit</h2>
+          <span class="price">$19</span>
+        </div>
+        <p class="hook">Offer comparison calculator (cost-of-living adjusted) plus word-for-word negotiation scripts.</p>
+        <div class="actions">
+          <a class="preview" href="./downloads/new-grad-job-search-negotiation-kit.html" target="_blank" rel="noopener">Preview</a>
+          <a class="buy" href="https://buy.stripe.com/test_dRmeVf6aygJa2Q37ehbQY02" target="_blank" rel="noopener">Buy &mdash; $19</a>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <h2>Student Study Planner</h2>
+          <span class="price">$9</span>
+        </div>
+        <p class="hook">Weekly study-load calculator, spaced-repetition scheduler, and a daily habit grid.</p>
+        <div class="actions">
+          <a class="preview" href="./downloads/student-study-planner-habit-tracker.html" target="_blank" rel="noopener">Preview</a>
+          <a class="buy" href="https://buy.stripe.com/test_7sY7sNgPccsU2Q3dCFbQY00" target="_blank" rel="noopener">Buy &mdash; $9</a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="site">
+      <p><a href="./index.html">Full site</a> &middot; <a href="./shop.html">Shop</a> &middot; <a href="./privacy.html">Privacy</a></p>
+    </footer>
+  </div>
+</body>
+</html>
