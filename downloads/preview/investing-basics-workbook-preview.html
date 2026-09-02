@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Investing Basics Workbook — Preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #f5f0e6;
+    --paper-alt: #ede4d3;
+    --ink: #2b2320;
+    --ink-soft: #5b4f45;
+    --barn: #8c3b2e;
+    --barn-deep: #6b2a21;
+    --gold: #b98a3e;
+    --line: #d8cbb3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #221d19; --paper-alt: #2b241f; --ink: #ede3d3; --ink-soft: #b9ac97;
+      --barn: #e07856; --barn-deep: #f09274; --gold: #d9a94f; --line: #3c332b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Karla", -apple-system, "Segoe UI", sans-serif; line-height: 1.6;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  .mark {
+    font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 0.95rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn);
+    border: 1.5px solid var(--barn); border-radius: 3px; padding: 0.15rem 0.55rem;
+    display: inline-block; transform: rotate(-2deg); margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif; font-weight: 650;
+    font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.1; margin: 0 0 0.6rem;
+    text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .sub { color: var(--ink-soft); font-size: 1.05rem; max-width: 55ch; margin: 0 0 1.5rem; }
+  .disclaimer {
+    background: var(--paper-alt); border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0; padding: 0.9rem 1.15rem;
+    font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 3rem;
+  }
+  section { border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 2.5rem; }
+  h2 {
+    font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.5rem;
+    margin: 0 0 0.4rem; display: flex; align-items: baseline; gap: 0.6rem;
+  }
+  h2 .num { font-family: "IBM Plex Mono", monospace; font-size: 0.95rem; color: var(--barn); }
+  .lead { color: var(--ink-soft); margin: 0 0 1.5rem; }
+  .card {
+    background: var(--paper-alt); border: 1px solid var(--line);
+    border-radius: 10px; padding: 1.4rem;
+  }
+  dl { margin: 0; }
+  dt { font-weight: 700; margin-top: 1rem; }
+  dd { margin: 0.2rem 0 0; color: var(--ink-soft); font-size: 0.94rem; }
+  .preview-note {
+    background: rgba(186, 154, 62, 0.1); border: 1px solid var(--gold); border-radius: 8px;
+    padding: 1.5rem; margin: 2rem 0; font-size: 0.95rem; color: var(--ink);
+  }
+  .preview-note strong { color: var(--barn); }
+  .cta-section {
+    background: var(--barn); color: var(--paper); border-radius: 12px; padding: 2rem;
+    margin-top: 3rem; text-align: center;
+  }
+  .cta-section h3 { font-family: "Fraunces", Georgia, serif; font-size: 1.5rem; margin: 0 0 1rem; }
+  .cta-section p { margin: 0 0 1.5rem; line-height: 1.6; }
+  .cta-list { text-align: left; display: inline-block; margin-bottom: 1.5rem; }
+  .cta-list li { margin: 0.5rem 0; }
+  .buy-btn {
+    background: var(--paper); color: var(--barn); text-decoration: none; font-weight: 700;
+    font-size: 1rem; padding: 0.75rem 2rem; border-radius: 8px; display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: "Fraunces", Georgia, serif;
+  }
+  .buy-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+  footer {
+    margin-top: 4rem; padding-top: 1.75rem; border-top: 1px solid var(--line);
+    font-size: 0.85rem; color: var(--ink-soft); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="mark">Barnyard Templates</span>
+  <h1>Investing Basics Workbook</h1>
+  <p class="sub">Building your first portfolio — a plain-language workbook for someone about to open their first brokerage account.</p>
+
+  <div class="disclaimer">
+    <strong>Educational only.</strong> This workbook explains common concepts and uses widely-published rules of thumb to illustrate them. It is not personalized investment advice. Talk to a licensed financial advisor or tax professional for your specific situation.
+  </div>
+
+  <section style="border-top:none;padding-top:0;margin-top:0">
+    <h2><span class="num">01</span>What You're Actually Buying</h2>
+    <p class="lead">Three terms cover most of what a beginner needs to understand.</p>
+    <div class="card">
+      <dl>
+        <dt>A stock</dt>
+        <dd>A share of ownership in one company. If that one company does badly, so do you. This is why holding only a handful of individual stocks is riskier than it looks.</dd>
+        <dt>An index fund</dt>
+        <dd>A single fund that holds hundreds or thousands of companies at once, tracking a whole market (like the S&P 500). One purchase spreads your money across everything in that index — that spread is the entire point.</dd>
+        <dt>A bond</dt>
+        <dd>A loan to a government or company that pays interest. Historically less volatile than stocks and lower returning. Its job in a portfolio is to cushion the drops, not to make you rich.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Risk Tolerance Worksheet</h2>
+    <p class="lead">Answer honestly about what you'd actually do, not what sounds brave.</p>
+    <div class="card">
+      <p style="margin: 0 0 1rem;">1. Your portfolio drops 25% in a month. You would:</p>
+      <ul style="margin: 0 0 1rem; color: var(--ink-soft);">
+        <li>Sell most of it — I can't watch that happen</li>
+        <li>Sell some and wait it out</li>
+        <li>Change nothing</li>
+        <li>Buy more while it's cheap</li>
+      </ul>
+      <p style="margin: 0; color: var(--ink-soft); font-size: 0.9rem;"><em>This is a <strong>preview</strong> of the full workbook. The interactive calculator is included only in the full product, which lets you answer all four questions and see your personalized allocation recommendation.</em></p>
+    </div>
+  </section>
+
+  <div class="preview-note">
+    <strong>What's in the full workbook beyond this preview:</strong>
+    <ul style="margin: 1rem 0 0; padding-left: 1.5rem;">
+      <li>Complete risk tolerance worksheet (4 questions with scoring)</li>
+      <li>Asset allocation table by age (age 25-65)</li>
+      <li>Interactive allocation calculator that adjusts based on your answers</li>
+      <li>Monthly contribution projector with worked examples (5-year, 10-year, 20-year projections)</li>
+      <li>Compound growth formula explained with step-by-step arithmetic</li>
+      <li>Pre-investing checklist (5 must-haves before you buy anything)</li>
+      <li>Fund selection guide with specific fund recommendations</li>
+      <li>Complete quick reference worksheet</li>
+      <li>~3,000+ words of educational content with multiple worked examples</li>
+    </ul>
+  </div>
+
+  <div class="cta-section">
+    <h3>Ready to Build Your Portfolio?</h3>
+    <p>The full Investing Basics Workbook includes interactive calculators, printable worksheets, and step-by-step guidance that walks you through opening your first brokerage account with confidence.</p>
+    <div class="cta-list">
+      <ul style="list-style: none; margin: 0; padding: 0;">
+        <li>✓ Asset allocation calculator personalized to your risk tolerance</li>
+        <li>✓ Compound growth projections for multiple scenarios</li>
+        <li>✓ Pre-investing checklist and fund selection guide</li>
+        <li>✓ Printable worksheets for planning and tracking</li>
+      </ul>
+    </div>
+    <a href="https://buy.stripe.com/test_28E00l9mKgJabmzaqtbQY03" class="buy-btn">Buy Now — $15</a>
+  </div>
+
+  <footer>
+    <p>Barnyard Templates — Educational use only</p>
+  </footer>
+</div>
+</body>
+</html>

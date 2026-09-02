@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>New Grad Job Search Kit — Preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root { --paper: #f5f0e6; --paper-alt: #ede4d3; --ink: #2b2320; --ink-soft: #5b4f45; --barn: #8c3b2e; --barn-deep: #6b2a21; --gold: #b98a3e; --line: #d8cbb3; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #221d19; --paper-alt: #2b241f; --ink: #ede3d3; --ink-soft: #b9ac97; --barn: #e07856; --barn-deep: #f09274; --gold: #d9a94f; --line: #3c332b; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Karla", -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  .mark { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn); border: 1.5px solid var(--barn); border-radius: 3px; padding: 0.15rem 0.55rem; display: inline-block; transform: rotate(-2deg); margin-bottom: 1.5rem; }
+  h1 { font-family: "Fraunces", Georgia, serif; font-weight: 650; font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.1; margin: 0 0 0.6rem; text-wrap: balance; letter-spacing: -0.01em; }
+  .sub { color: var(--ink-soft); font-size: 1.05rem; max-width: 55ch; margin: 0 0 1.5rem; }
+  .disclaimer { background: var(--paper-alt); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 0.9rem 1.15rem; font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 3rem; }
+  section { border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 2.5rem; }
+  h2 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.5rem; margin: 0 0 0.4rem; }
+  .lead { color: var(--ink-soft); margin: 0 0 1.5rem; }
+  .card { background: var(--paper-alt); border: 1px solid var(--line); border-radius: 10px; padding: 1.4rem; }
+  dl { margin: 0; }
+  dt { font-weight: 700; margin-top: 1rem; }
+  dd { margin: 0.2rem 0 0; color: var(--ink-soft); font-size: 0.94rem; }
+  .script-box { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-size: 0.94rem; line-height: 1.7; }
+  .script-title { font-weight: 700; color: var(--barn); margin-bottom: 0.5rem; }
+  .script-text { color: var(--ink); font-style: italic; margin-bottom: 0.5rem; }
+  .script-response { color: var(--ink-soft); font-size: 0.9rem; margin-left: 1rem; margin-bottom: 0.5rem; }
+  .preview-note { background: rgba(186, 154, 62, 0.1); border: 1px solid var(--gold); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; font-size: 0.95rem; color: var(--ink); }
+  .preview-note strong { color: var(--barn); }
+  .cta-section { background: var(--barn); color: var(--paper); border-radius: 12px; padding: 2rem; margin-top: 3rem; text-align: center; }
+  .cta-section h3 { font-family: "Fraunces", Georgia, serif; font-size: 1.5rem; margin: 0 0 1rem; }
+  .cta-section p { margin: 0 0 1.5rem; line-height: 1.6; }
+  .cta-list { text-align: left; display: inline-block; margin-bottom: 1.5rem; }
+  .cta-list li { margin: 0.5rem 0; }
+  .buy-btn { background: var(--paper); color: var(--barn); text-decoration: none; font-weight: 700; font-size: 1rem; padding: 0.75rem 2rem; border-radius: 8px; display: inline-block; transition: transform 0.2s ease; font-family: "Fraunces", Georgia, serif; }
+  .buy-btn:hover { transform: translateY(-2px); }
+  footer { margin-top: 4rem; padding-top: 1.75rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--ink-soft); text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="mark">Barnyard Templates</span>
+  <h1>New Grad Job Search Kit</h1>
+  <p class="sub">Everything a new graduate needs to run a real job search: offer comparison, application tracker, and negotiation scripts.</p>
+
+  <div class="disclaimer">
+    <strong>Not legal or tax advice.</strong> Use these templates as educational examples and starting points. Negotiate respectfully and in good faith.
+  </div>
+
+  <section style="border-top:none;padding-top:0;margin-top:0">
+    <h2>Understanding Total Compensation</h2>
+    <p class="lead">An offer is never just base salary.</p>
+    <div class="card">
+      <p>Total compensation = base + signing bonus + annual bonus % + equity value + benefits value. A $100K base with $20K signing bonus and 15% annual bonus is different from $100K base alone.</p>
+      <p>Cost-of-living matters: $150K in San Francisco (COL ~220) has less purchasing power than $100K in Austin (COL ~120).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Negotiation Scripts: Three Common Pushbacks</h2>
+    <p class="lead">These scripts are starting points. Adapt to your situation.</p>
+
+    <div class="script-box">
+      <div class="script-title">Them: "This is our standard offer for your level."</div>
+      <div class="script-text">You: "I'm excited about the role. Based on my research, comparable roles range $X to $Y. My background puts me at the higher end. Can we move on base salary or signing bonus?"</div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-title">Them: "We can't go higher; equity budget is locked."</div>
+      <div class="script-text">You: "I understand. Since equity's constrained, could we revisit base salary or increase the signing bonus?"</div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-title">Them: "We're already fair to everyone."</div>
+      <div class="script-text">You: "I believe you are. Negotiating is professional norm, not ingratitude. Based on my research, there's room to move."</div>
+    </div>
+  </section>
+
+  <div class="preview-note">
+    <strong>What's in the full job search kit beyond this preview:</strong>
+    <ul style="margin: 1rem 0 0; padding-left: 1.5rem;">
+      <li>Offer comparison calculator with worked examples</li>
+      <li>Cost-of-living adjustment guide</li>
+      <li>8 common negotiation scripts with full responses</li>
+      <li>Application tracker template</li>
+      <li>Interview prep checklist by round (phone, technical, final)</li>
+      <li>Research sources and due diligence guide</li>
+      <li>Salary data sources and evaluation checklist</li>
+      <li>~2,500+ words of negotiation examples and guidance</li>
+    </ul>
+  </div>
+
+  <div class="cta-section">
+    <h3>Negotiate with Confidence</h3>
+    <p>The full Job Search Kit includes 8+ negotiation scripts, application tracker, offer comparison calculator with cost-of-living adjustment, and interview prep checklists. Land a better offer—the value far exceeds the price.</p>
+    <div class="cta-list">
+      <ul style="list-style: none; margin: 0; padding: 0;">
+        <li>✓ 8 negotiation scripts for common pushbacks</li>
+        <li>✓ Offer comparison calculator with COL adjustment</li>
+        <li>✓ Application tracking template</li>
+        <li>✓ Interview prep checklist by round</li>
+      </ul>
+    </div>
+    <a href="https://buy.stripe.com/test_dRmeVf6aygJa2Q37ehbQY02" class="buy-btn">Buy Now — $19</a>
+  </div>
+
+  <footer>
+    <p>Barnyard Templates — Educational use only</p>
+  </footer>
+</div>
+</body>
+</html>
