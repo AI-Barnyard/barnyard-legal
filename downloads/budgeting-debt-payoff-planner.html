@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang=&rdquo;en&rdquo;>
+<html lang="en">
 <head>
-<meta charset=&rdquo;utf-8&rdquo;>
-<meta name=&rdquo;viewport&rdquo; content=&rdquo;width=device-width, initial-scale=1&rdquo;>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Budgeting & Debt Payoff Planner</title>
-<link rel=&rdquo;stylesheet&rdquo; href=&rdquo;https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap&rdquo;>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root {
     --paper: #f5f0e6;
@@ -17,7 +17,7 @@
     --line: #d8cbb3;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme=&rdquo;light&rdquo;]) {
+    :root:not([data-theme="light"]) {
       --paper: #221d19; --paper-alt: #2b241f; --ink: #ede3d3; --ink-soft: #b9ac97;
       --barn: #e07856; --barn-deep: #f09274; --gold: #d9a94f; --line: #3c332b;
     }
@@ -25,17 +25,17 @@
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
-    font-family: &rdquo;Karla&rdquo;, -apple-system, &rdquo;Segoe UI&rdquo;, sans-serif; line-height: 1.6;
+    font-family: "Karla", -apple-system, "Segoe UI", sans-serif; line-height: 1.6;
   }
   .wrap { max-width: 780px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
   .mark {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 700; font-size: 0.95rem;
+    font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 0.95rem;
     letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn);
     border: 1.5px solid var(--barn); border-radius: 3px; padding: 0.15rem 0.55rem;
     display: inline-block; transform: rotate(-2deg); margin-bottom: 1.5rem;
   }
   h1 {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 650;
+    font-family: "Fraunces", Georgia, serif; font-weight: 650;
     font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.1; margin: 0 0 0.6rem;
     text-wrap: balance; letter-spacing: -0.01em;
   }
@@ -47,10 +47,10 @@
   }
   section { border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 2.5rem; }
   h2 {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 600; font-size: 1.5rem;
+    font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.5rem;
     margin: 0 0 0.4rem; display: flex; align-items: baseline; gap: 0.6rem;
   }
-  h2 .num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 0.95rem; color: var(--barn); }
+  h2 .num { font-family: "IBM Plex Mono", monospace; font-size: 0.95rem; color: var(--barn); }
   .lead { color: var(--ink-soft); margin: 0 0 1.5rem; }
   .card {
     background: var(--paper-alt); border: 1px solid var(--line);
@@ -59,12 +59,12 @@
   .field { margin-bottom: 1rem; }
   .field label { display: block; font-size: 0.82rem; font-weight: 700;
     letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
-  input[type=&rdquo;number&rdquo;], input[type=&rdquo;text&rdquo;] {
-    font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 1rem;
+  input[type="number"], input[type="text"] {
+    font-family: "IBM Plex Mono", monospace; font-size: 1rem;
     padding: 0.5rem 0.65rem; border: 1px solid var(--line); border-radius: 7px;
     background: var(--paper); color: var(--ink); width: 100%;
   }
-  input[type=&rdquo;number&rdquo;]:focus-visible {
+  input[type="number"]:focus-visible {
     outline: 2px solid var(--gold); outline-offset: 1px;
   }
   .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
@@ -75,11 +75,11 @@
     font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
   }
-  .verdict { font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .verdict { font-family: "Fraunces", Georgia, serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.4rem; }
   table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.93rem; }
   th, td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--line); }
   th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
-  td.num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; text-align: right; font-variant-numeric: tabular-nums; }
+  td.num { font-family: "IBM Plex Mono", monospace; text-align: right; font-variant-numeric: tabular-nums; }
   .add-btn {
     background: var(--barn); color: var(--paper); border: none; padding: 0.55rem 1.1rem;
     border-radius: 7px; cursor: pointer; font-weight: 700; font-size: 0.88rem;
@@ -93,7 +93,7 @@
   .debt-row input { font-size: 0.9rem; }
   .remove-btn { padding: 0.35rem 0.75rem; font-size: 0.8rem; background: #c8a080; color: var(--paper); border: none; border-radius: 5px; cursor: pointer; }
   .comp-table { margin-top: 1.5rem; }
-  .comp-table-title { font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+  .comp-table-title { font-family: "Fraunces", Georgia, serif; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; }
   .balance-note { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.5rem; }
   footer {
     margin-top: 4rem; padding-top: 1.75rem; border-top: 1px solid var(--line);
@@ -108,94 +108,94 @@
 </style>
 </head>
 <body>
-<div class=&rdquo;wrap&rdquo;>
-  <span class=&rdquo;mark&rdquo;>Barnyard Templates</span>
+<div class="wrap">
+  <span class="mark">Barnyard Templates</span>
   <h1>Budgeting &amp; Debt Payoff Planner</h1>
-  <p class=&rdquo;sub&rdquo;>A monthly budget template paired with a real debt payoff calculator comparing snowball vs. avalanche methods side by side.</p>
+  <p class="sub">A monthly budget template paired with a real debt payoff calculator comparing snowball vs. avalanche methods side by side.</p>
 
-  <div class=&rdquo;disclaimer&rdquo;>
+  <div class="disclaimer">
     <strong>For education only.</strong> This tool helps you visualize debt payoff strategies using simplified calculations. Real-world results depend on your exact interest calculation method, payment timing, and any additional fees your creditors charge. For serious debt situations, consider consulting a financial advisor or nonprofit credit counseling service.
   </div>
 
-  <section style=&rdquo;border-top:none;padding-top:0;margin-top:0&rdquo;>
-    <h2><span class=&rdquo;num&rdquo;>01</span>Monthly Budget Worksheet</h2>
-    <p class=&rdquo;lead&rdquo;>Income minus expenses. Update these numbers monthly to track where your money goes.</p>
-    <div class=&rdquo;card&rdquo;>
-      <div class=&rdquo;grid2&rdquo;>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;income&rdquo;>Monthly income ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;income&rdquo; min=&rdquo;0&rdquo; step=&rdquo;50&rdquo; value=&rdquo;3500&rdquo;>
+  <section style="border-top:none;padding-top:0;margin-top:0">
+    <h2><span class="num">01</span>Monthly Budget Worksheet</h2>
+    <p class="lead">Income minus expenses. Update these numbers monthly to track where your money goes.</p>
+    <div class="card">
+      <div class="grid2">
+        <div class="field">
+          <label for="income">Monthly income ($)</label>
+          <input type="number" id="income" min="0" step="50" value="3500">
         </div>
       </div>
-      <p style=&rdquo;font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--barn);&rdquo;>Fixed Expenses</p>
-      <div class=&rdquo;grid2&rdquo;>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;rent&rdquo;>Rent/Housing ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;rent&rdquo; min=&rdquo;0&rdquo; step=&rdquo;50&rdquo; value=&rdquo;1200&rdquo;>
+      <p style="font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--barn);">Fixed Expenses</p>
+      <div class="grid2">
+        <div class="field">
+          <label for="rent">Rent/Housing ($)</label>
+          <input type="number" id="rent" min="0" step="50" value="1200">
         </div>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;utilities&rdquo;>Utilities ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;utilities&rdquo; min=&rdquo;0&rdquo; step=&rdquo;10&rdquo; value=&rdquo;120&rdquo;>
+        <div class="field">
+          <label for="utilities">Utilities ($)</label>
+          <input type="number" id="utilities" min="0" step="10" value="120">
         </div>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;insurance&rdquo;>Insurance ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;insurance&rdquo; min=&rdquo;0&rdquo; step=&rdquo;10&rdquo; value=&rdquo;80&rdquo;>
-        </div>
-      </div>
-      <p style=&rdquo;font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--barn);&rdquo;>Variable Expenses</p>
-      <div class=&rdquo;grid2&rdquo;>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;groceries&rdquo;>Groceries ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;groceries&rdquo; min=&rdquo;0&rdquo; step=&rdquo;25&rdquo; value=&rdquo;400&rdquo;>
-        </div>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;transport&rdquo;>Transportation ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;transport&rdquo; min=&rdquo;0&rdquo; step=&rdquo;25&rdquo; value=&rdquo;200&rdquo;>
-        </div>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;personal&rdquo;>Personal/Misc ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;personal&rdquo; min=&rdquo;0&rdquo; step=&rdquo;25&rdquo; value=&rdquo;150&rdquo;>
+        <div class="field">
+          <label for="insurance">Insurance ($)</label>
+          <input type="number" id="insurance" min="0" step="10" value="80">
         </div>
       </div>
-      <p style=&rdquo;font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--barn);&rdquo;>Goals</p>
-      <div class=&rdquo;grid2&rdquo;>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;savings&rdquo;>Target savings ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;savings&rdquo; min=&rdquo;0&rdquo; step=&rdquo;25&rdquo; value=&rdquo;250&rdquo;>
+      <p style="font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--barn);">Variable Expenses</p>
+      <div class="grid2">
+        <div class="field">
+          <label for="groceries">Groceries ($)</label>
+          <input type="number" id="groceries" min="0" step="25" value="400">
+        </div>
+        <div class="field">
+          <label for="transport">Transportation ($)</label>
+          <input type="number" id="transport" min="0" step="25" value="200">
+        </div>
+        <div class="field">
+          <label for="personal">Personal/Misc ($)</label>
+          <input type="number" id="personal" min="0" step="25" value="150">
         </div>
       </div>
-      <div class=&rdquo;result&rdquo;>
-        <div class=&rdquo;result-label&rdquo;>Monthly Balance</div>
-        <div class=&rdquo;verdict&rdquo; id=&rdquo;balanceResult&rdquo;>$0</div>
-        <p id=&rdquo;balanceNote&rdquo; class=&rdquo;balance-note&rdquo;></p>
+      <p style="font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--barn);">Goals</p>
+      <div class="grid2">
+        <div class="field">
+          <label for="savings">Target savings ($)</label>
+          <input type="number" id="savings" min="0" step="25" value="250">
+        </div>
+      </div>
+      <div class="result">
+        <div class="result-label">Monthly Balance</div>
+        <div class="verdict" id="balanceResult">$0</div>
+        <p id="balanceNote" class="balance-note"></p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>02</span>Debt Payoff Calculator</h2>
-    <p class=&rdquo;lead&rdquo;>Enter your debts and an extra monthly payment amount. See how long payoff takes under snowball (smallest first) vs. avalanche (highest interest first) methods.</p>
-    <div class=&rdquo;card&rdquo;>
-      <p style=&rdquo;margin: 0 0 1rem; font-size: 0.94rem; color: var(--ink-soft);&rdquo;>Add each debt with its name, current balance, APR, and minimum monthly payment.</p>
-      <div id=&rdquo;debtsList&rdquo;></div>
-      <button class=&rdquo;add-btn&rdquo; onclick=&rdquo;addDebtRow()&rdquo;>+ Add Debt</button>
+    <h2><span class="num">02</span>Debt Payoff Calculator</h2>
+    <p class="lead">Enter your debts and an extra monthly payment amount. See how long payoff takes under snowball (smallest first) vs. avalanche (highest interest first) methods.</p>
+    <div class="card">
+      <p style="margin: 0 0 1rem; font-size: 0.94rem; color: var(--ink-soft);">Add each debt with its name, current balance, APR, and minimum monthly payment.</p>
+      <div id="debtsList"></div>
+      <button class="add-btn" onclick="addDebtRow()">+ Add Debt</button>
 
-      <div class=&rdquo;grid2&rdquo; style=&rdquo;margin-top: 1.5rem;&rdquo;>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;extraPayment&rdquo;>Extra monthly payment ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;extraPayment&rdquo; min=&rdquo;0&rdquo; step=&rdquo;50&rdquo; value=&rdquo;200&rdquo;>
+      <div class="grid2" style="margin-top: 1.5rem;">
+        <div class="field">
+          <label for="extraPayment">Extra monthly payment ($)</label>
+          <input type="number" id="extraPayment" min="0" step="50" value="200">
         </div>
       </div>
 
-      <div id=&rdquo;debtResults&rdquo;></div>
+      <div id="debtResults"></div>
     </div>
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>03</span>Irregular Income Note</h2>
-    <div class=&rdquo;card&rdquo;>
-      <p style=&rdquo;margin: 0 0 0.75rem;&rdquo;><strong>For freelancers and gig workers:</strong> Use your average monthly income (total annual income &divide; 12) in the budget worksheet above. In months where you earn more, allocate the extra to your &rdquo;extra payment&rdquo; in the debt calculator or to emergency savings. This creates a buffer for lower-income months.</p>
-      <p style=&rdquo;margin: 0;&rdquo;>The snowball method often works better for irregular income because you build momentum with quick wins (paid-off debts), while the avalanche method requires more discipline to stick with when income varies.</p>
+    <h2><span class="num">03</span>Irregular Income Note</h2>
+    <div class="card">
+      <p style="margin: 0 0 0.75rem;"><strong>For freelancers and gig workers:</strong> Use your average monthly income (total annual income &divide; 12) in the budget worksheet above. In months where you earn more, allocate the extra to your "extra payment" in the debt calculator or to emergency savings. This creates a buffer for lower-income months.</p>
+      <p style="margin: 0;">The snowball method often works better for irregular income because you build momentum with quick wins (paid-off debts), while the avalanche method requires more discipline to stick with when income varies.</p>
     </div>
   </section>
 
@@ -217,11 +217,11 @@
     row.className = 'debt-row';
     row.id = 'debt-' + debtRows;
     row.innerHTML = `
-      <input type=&rdquo;text&rdquo; placeholder=&rdquo;Name (e.g., Credit Card)&rdquo; class=&rdquo;debt-name&rdquo;>
-      <input type=&rdquo;number&rdquo; placeholder=&rdquo;Balance&rdquo; class=&rdquo;debt-balance&rdquo; min=&rdquo;0&rdquo; step=&rdquo;100&rdquo;>
-      <input type=&rdquo;number&rdquo; placeholder=&rdquo;APR %&rdquo; class=&rdquo;debt-apr&rdquo; min=&rdquo;0&rdquo; max=&rdquo;50&rdquo; step=&rdquo;0.5&rdquo; value=&rdquo;15&rdquo;>
-      <input type=&rdquo;number&rdquo; placeholder=&rdquo;Min payment&rdquo; class=&rdquo;debt-min&rdquo; min=&rdquo;0&rdquo; step=&rdquo;10&rdquo;>
-      <button class=&rdquo;remove-btn&rdquo; onclick=&rdquo;removeDebt('debt-${debtRows}')&rdquo;>Remove</button>
+      <input type="text" placeholder="Name (e.g., Credit Card)" class="debt-name">
+      <input type="number" placeholder="Balance" class="debt-balance" min="0" step="100">
+      <input type="number" placeholder="APR %" class="debt-apr" min="0" max="50" step="0.5" value="15">
+      <input type="number" placeholder="Min payment" class="debt-min" min="0" step="10">
+      <button class="remove-btn" onclick="removeDebt('debt-${debtRows}')">Remove</button>
     `;
     list.appendChild(row);
     row.querySelector('.debt-name').addEventListener('input', calculate);
@@ -338,28 +338,28 @@
     const totalMin = debts.reduce((s, d) => s + d.minPayment, 0);
 
     let html = `
-      <div class=&rdquo;comp-table&rdquo;>
-        <div class=&rdquo;comp-table-title&rdquo;>Side-by-Side Comparison</div>
+      <div class="comp-table">
+        <div class="comp-table-title">Side-by-Side Comparison</div>
         <table>
           <thead>
-            <tr><th>Method</th><th style=&rdquo;text-align:right&rdquo;>Months to Payoff</th><th style=&rdquo;text-align:right&rdquo;>Total Interest</th><th style=&rdquo;text-align:right&rdquo;>Total Paid</th></tr>
+            <tr><th>Method</th><th style="text-align:right">Months to Payoff</th><th style="text-align:right">Total Interest</th><th style="text-align:right">Total Paid</th></tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Snowball</strong> (smallest first)</td>
-              <td class=&rdquo;num&rdquo;>${snowball.months} mo</td>
-              <td class=&rdquo;num&rdquo;>${fmtDec(snowball.interest)}</td>
-              <td class=&rdquo;num&rdquo;>${fmtDec(totalBalance + snowball.interest)}</td>
+              <td class="num">${snowball.months} mo</td>
+              <td class="num">${fmtDec(snowball.interest)}</td>
+              <td class="num">${fmtDec(totalBalance + snowball.interest)}</td>
             </tr>
             <tr>
               <td><strong>Avalanche</strong> (highest interest first)</td>
-              <td class=&rdquo;num&rdquo;>${avalanche.months} mo</td>
-              <td class=&rdquo;num&rdquo;>${fmtDec(avalanche.interest)}</td>
-              <td class=&rdquo;num&rdquo;>${fmtDec(totalBalance + avalanche.interest)}</td>
+              <td class="num">${avalanche.months} mo</td>
+              <td class="num">${fmtDec(avalanche.interest)}</td>
+              <td class="num">${fmtDec(totalBalance + avalanche.interest)}</td>
             </tr>
           </tbody>
         </table>
-        <p style=&rdquo;margin-top: 1rem; font-size: 0.9rem; color: var(--ink-soft);&rdquo;>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--ink-soft);">
           <strong>Monthly minimum payments total:</strong> ${fmtDec(totalMin)}.
           <strong>With extra ${fmtDec(extra)}:</strong> Total ${fmtDec(totalMin + extra)}/month.
           Snowball saves you momentum through quick wins; avalanche saves the most interest overall.

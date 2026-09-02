@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang=&rdquo;en&rdquo;>
+<html lang="en">
 <head>
-<meta charset=&rdquo;utf-8&rdquo;>
-<meta name=&rdquo;viewport&rdquo; content=&rdquo;width=device-width, initial-scale=1&rdquo;>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Student Study Planner & Habit Tracker</title>
-<link rel=&rdquo;stylesheet&rdquo; href=&rdquo;https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap&rdquo;>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root {
     --paper: #f5f0e6;
@@ -17,7 +17,7 @@
     --line: #d8cbb3;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme=&rdquo;light&rdquo;]) {
+    :root:not([data-theme="light"]) {
       --paper: #221d19; --paper-alt: #2b241f; --ink: #ede3d3; --ink-soft: #b9ac97;
       --barn: #e07856; --barn-deep: #f09274; --gold: #d9a94f; --line: #3c332b;
     }
@@ -25,17 +25,17 @@
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
-    font-family: &rdquo;Karla&rdquo;, -apple-system, &rdquo;Segoe UI&rdquo;, sans-serif; line-height: 1.6;
+    font-family: "Karla", -apple-system, "Segoe UI", sans-serif; line-height: 1.6;
   }
   .wrap { max-width: 780px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
   .mark {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 700; font-size: 0.95rem;
+    font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 0.95rem;
     letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn);
     border: 1.5px solid var(--barn); border-radius: 3px; padding: 0.15rem 0.55rem;
     display: inline-block; transform: rotate(-2deg); margin-bottom: 1.5rem;
   }
   h1 {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 650;
+    font-family: "Fraunces", Georgia, serif; font-weight: 650;
     font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.1; margin: 0 0 0.6rem;
     text-wrap: balance; letter-spacing: -0.01em;
   }
@@ -47,10 +47,10 @@
   }
   section { border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 2.5rem; }
   h2 {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 600; font-size: 1.5rem;
+    font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.5rem;
     margin: 0 0 0.4rem; display: flex; align-items: baseline; gap: 0.6rem;
   }
-  h2 .num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 0.95rem; color: var(--barn); }
+  h2 .num { font-family: "IBM Plex Mono", monospace; font-size: 0.95rem; color: var(--barn); }
   .lead { color: var(--ink-soft); margin: 0 0 1.5rem; }
   .card {
     background: var(--paper-alt); border: 1px solid var(--line);
@@ -59,12 +59,12 @@
   .field { margin-bottom: 1rem; }
   .field label { display: block; font-size: 0.82rem; font-weight: 700;
     letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
-  input[type=&rdquo;number&rdquo;], input[type=&rdquo;text&rdquo;], select {
-    font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 1rem;
+  input[type="number"], input[type="text"], select {
+    font-family: "IBM Plex Mono", monospace; font-size: 1rem;
     padding: 0.5rem 0.65rem; border: 1px solid var(--line); border-radius: 7px;
     background: var(--paper); color: var(--ink); width: 100%;
   }
-  input[type=&rdquo;number&rdquo;]:focus-visible {
+  input[type="number"]:focus-visible {
     outline: 2px solid var(--gold); outline-offset: 1px;
   }
   .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
@@ -75,12 +75,12 @@
     font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
   }
-  .verdict { font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .verdict { font-family: "Fraunces", Georgia, serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.4rem; }
   .warning { color: #a85a52; font-weight: 600; }
   table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.93rem; }
   th, td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--line); }
   th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
-  td.num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; text-align: right; font-variant-numeric: tabular-nums; }
+  td.num { font-family: "IBM Plex Mono", monospace; text-align: right; font-variant-numeric: tabular-nums; }
   .add-btn {
     background: var(--barn); color: var(--paper); border: none; padding: 0.55rem 1.1rem;
     border-radius: 7px; cursor: pointer; font-weight: 700; font-size: 0.88rem;
@@ -112,115 +112,115 @@
 </style>
 </head>
 <body>
-<div class=&rdquo;wrap&rdquo;>
-  <span class=&rdquo;mark&rdquo;>Barnyard Templates</span>
+<div class="wrap">
+  <span class="mark">Barnyard Templates</span>
   <h1>Student Study Planner &amp; Habit Tracker</h1>
-  <p class=&rdquo;sub&rdquo;>A semester-length planner for students juggling multiple classes: weekly study-load calculator, spaced-repetition review tracker, and daily habit grid.</p>
+  <p class="sub">A semester-length planner for students juggling multiple classes: weekly study-load calculator, spaced-repetition review tracker, and daily habit grid.</p>
 
-  <div class=&rdquo;disclaimer&rdquo;>
+  <div class="disclaimer">
     <strong>Not a substitute for professional help.</strong> If you're struggling with time management, mental health, or learning disabilities, talk to your school's student support services. Study tools work best alongside proper sleep, exercise, and breaks.
   </div>
 
-  <section style=&rdquo;border-top:none;padding-top:0;margin-top:0&rdquo;>
-    <h2><span class=&rdquo;num&rdquo;>01</span>Weekly Study Load Calculator</h2>
-    <p class=&rdquo;lead&rdquo;>Enter each class with estimated weekly study hours and difficulty. See your total load and get warned if you're overcommitted.</p>
-    <div class=&rdquo;card&rdquo;>
-      <p style=&rdquo;font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 1rem;&rdquo;>For each class: estimate weekly study hours (lectures + assignments + reading). Difficulty is just a weight for your own sense of drain: 1 = easy/review, 2 = normal, 3 = hard.</p>
-      <div id=&rdquo;classesList&rdquo;></div>
-      <button class=&rdquo;add-btn&rdquo; onclick=&rdquo;addClassRow()&rdquo;>+ Add Class</button>
+  <section style="border-top:none;padding-top:0;margin-top:0">
+    <h2><span class="num">01</span>Weekly Study Load Calculator</h2>
+    <p class="lead">Enter each class with estimated weekly study hours and difficulty. See your total load and get warned if you're overcommitted.</p>
+    <div class="card">
+      <p style="font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 1rem;">For each class: estimate weekly study hours (lectures + assignments + reading). Difficulty is just a weight for your own sense of drain: 1 = easy/review, 2 = normal, 3 = hard.</p>
+      <div id="classesList"></div>
+      <button class="add-btn" onclick="addClassRow()">+ Add Class</button>
 
-      <div class=&rdquo;grid2&rdquo; style=&rdquo;margin-top: 1.5rem;&rdquo;>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;available&rdquo;>Available hours/week for study</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;available&rdquo; min=&rdquo;0&rdquo; step=&rdquo;5&rdquo; value=&rdquo;35&rdquo;>
+      <div class="grid2" style="margin-top: 1.5rem;">
+        <div class="field">
+          <label for="available">Available hours/week for study</label>
+          <input type="number" id="available" min="0" step="5" value="35">
         </div>
       </div>
 
-      <div id=&rdquo;loadResults&rdquo;></div>
+      <div id="loadResults"></div>
     </div>
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>02</span>Spaced-Repetition Review Scheduler</h2>
-    <p class=&rdquo;lead&rdquo;>Enter a topic and when you first studied it. Get the next 4 review dates using the scientifically-backed 1&ndash;3&ndash;7&ndash;16&ndash;35 day spacing.</p>
-    <div class=&rdquo;card&rdquo;>
-      <div class=&rdquo;grid2&rdquo;>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;topic&rdquo;>Topic (e.g., Organic Chem Mechanisms)</label>
-          <input type=&rdquo;text&rdquo; id=&rdquo;topic&rdquo; placeholder=&rdquo;Enter topic&rdquo;>
+    <h2><span class="num">02</span>Spaced-Repetition Review Scheduler</h2>
+    <p class="lead">Enter a topic and when you first studied it. Get the next 4 review dates using the scientifically-backed 1&ndash;3&ndash;7&ndash;16&ndash;35 day spacing.</p>
+    <div class="card">
+      <div class="grid2">
+        <div class="field">
+          <label for="topic">Topic (e.g., Organic Chem Mechanisms)</label>
+          <input type="text" id="topic" placeholder="Enter topic">
         </div>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;firstDate&rdquo;>Date you first studied it</label>
-          <input type=&rdquo;date&rdquo; id=&rdquo;firstDate&rdquo;>
+        <div class="field">
+          <label for="firstDate">Date you first studied it</label>
+          <input type="date" id="firstDate">
         </div>
       </div>
-      <table id=&rdquo;spacedTable&rdquo; style=&rdquo;margin-top: 1.5rem;&rdquo;>
+      <table id="spacedTable" style="margin-top: 1.5rem;">
         <thead>
           <tr><th>Review #</th><th>Days After First Study</th><th>Review Date</th></tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>1 day</td><td id=&rdquo;date1&rdquo;>&ndash;</td></tr>
-          <tr><td>2</td><td>3 days</td><td id=&rdquo;date2&rdquo;>&ndash;</td></tr>
-          <tr><td>3</td><td>7 days</td><td id=&rdquo;date3&rdquo;>&ndash;</td></tr>
-          <tr><td>4</td><td>16 days</td><td id=&rdquo;date4&rdquo;>&ndash;</td></tr>
-          <tr><td>5</td><td>35 days</td><td id=&rdquo;date5&rdquo;>&ndash;</td></tr>
+          <tr><td>1</td><td>1 day</td><td id="date1">&ndash;</td></tr>
+          <tr><td>2</td><td>3 days</td><td id="date2">&ndash;</td></tr>
+          <tr><td>3</td><td>7 days</td><td id="date3">&ndash;</td></tr>
+          <tr><td>4</td><td>16 days</td><td id="date4">&ndash;</td></tr>
+          <tr><td>5</td><td>35 days</td><td id="date5">&ndash;</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>03</span>Daily Habit Tracker</h2>
-    <p class=&rdquo;lead&rdquo;>Print this page or fill in by hand. Check off each day you hit your targets. Missing 2+ days in a row? That's your signal to adjust.</p>
-    <div class=&rdquo;card&rdquo;>
-      <p style=&rdquo;font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 1rem;&rdquo;><strong>Instructions:</strong> Print this section weekly. Mark each day: ✓ if yes, blank if no. Track 3 habits: Sleep 7+ hours, Exercise 30 min, Screen time under 2 hrs.</p>
-      <table style=&rdquo;font-size: 0.9rem;&rdquo;>
+    <h2><span class="num">03</span>Daily Habit Tracker</h2>
+    <p class="lead">Print this page or fill in by hand. Check off each day you hit your targets. Missing 2+ days in a row? That's your signal to adjust.</p>
+    <div class="card">
+      <p style="font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 1rem;"><strong>Instructions:</strong> Print this section weekly. Mark each day: ✓ if yes, blank if no. Track 3 habits: Sleep 7+ hours, Exercise 30 min, Screen time under 2 hrs.</p>
+      <table style="font-size: 0.9rem;">
         <thead>
           <tr>
             <th>Habit</th>
-            <th colspan=&rdquo;7&rdquo; style=&rdquo;text-align:center&rdquo;>Week of ________________</th>
+            <th colspan="7" style="text-align:center">Week of ________________</th>
           </tr>
           <tr>
             <th></th>
-            <th style=&rdquo;text-align:center&rdquo;>Mon</th>
-            <th style=&rdquo;text-align:center&rdquo;>Tue</th>
-            <th style=&rdquo;text-align:center&rdquo;>Wed</th>
-            <th style=&rdquo;text-align:center&rdquo;>Thu</th>
-            <th style=&rdquo;text-align:center&rdquo;>Fri</th>
-            <th style=&rdquo;text-align:center&rdquo;>Sat</th>
-            <th style=&rdquo;text-align:center&rdquo;>Sun</th>
+            <th style="text-align:center">Mon</th>
+            <th style="text-align:center">Tue</th>
+            <th style="text-align:center">Wed</th>
+            <th style="text-align:center">Thu</th>
+            <th style="text-align:center">Fri</th>
+            <th style="text-align:center">Sat</th>
+            <th style="text-align:center">Sun</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Sleep 7+ hrs</strong></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
           </tr>
           <tr>
             <td><strong>Exercise 30 min</strong></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
           </tr>
           <tr>
             <td><strong>Screen &lt;2 hrs</strong></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
-            <td style=&rdquo;text-align:center; height: 50px;&rdquo;></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
+            <td style="text-align:center; height: 50px;"></td>
           </tr>
         </tbody>
       </table>
@@ -242,14 +242,14 @@
     row.className = 'class-row';
     row.id = 'class-' + classRows;
     row.innerHTML = `
-      <input type=&rdquo;text&rdquo; placeholder=&rdquo;Class name&rdquo; class=&rdquo;class-name&rdquo;>
-      <input type=&rdquo;number&rdquo; placeholder=&rdquo;Hours/week&rdquo; class=&rdquo;class-hours&rdquo; min=&rdquo;0&rdquo; step=&rdquo;1&rdquo; value=&rdquo;5&rdquo;>
-      <select class=&rdquo;class-difficulty&rdquo;>
-        <option value=&rdquo;1&rdquo;>Easy (1)</option>
-        <option value=&rdquo;2&rdquo; selected>Normal (2)</option>
-        <option value=&rdquo;3&rdquo;>Hard (3)</option>
+      <input type="text" placeholder="Class name" class="class-name">
+      <input type="number" placeholder="Hours/week" class="class-hours" min="0" step="1" value="5">
+      <select class="class-difficulty">
+        <option value="1">Easy (1)</option>
+        <option value="2" selected>Normal (2)</option>
+        <option value="3">Hard (3)</option>
       </select>
-      <button class=&rdquo;remove-btn&rdquo; onclick=&rdquo;removeClass('class-${classRows}')&rdquo;>Remove</button>
+      <button class="remove-btn" onclick="removeClass('class-${classRows}')">Remove</button>
     `;
     list.appendChild(row);
     row.querySelector('.class-name').addEventListener('input', calculateLoad);
@@ -281,16 +281,16 @@
     const available = parseFloat(document.getElementById('available').value) || 35;
     const remaining = available - totalHours;
 
-    let html = '<div class=&rdquo;result&rdquo;>' +
-      '<div class=&rdquo;result-label&rdquo;>Weekly Load</div>' +
-      '<div class=&rdquo;verdict&rdquo;>' + totalHours.toFixed(1) + ' hours of study</div>';
+    let html = '<div class="result">' +
+      '<div class="result-label">Weekly Load</div>' +
+      '<div class="verdict">' + totalHours.toFixed(1) + ' hours of study</div>';
 
     if (remaining < 0) {
-      html += '<p class=&rdquo;warning&rdquo;>You&apos;re overcommitted by ' + Math.abs(remaining).toFixed(1) + ' hours/week. Consider dropping a class, negotiating deadlines, or finding study partners.</p>';
+      html += '<p class="warning">You&apos;re overcommitted by ' + Math.abs(remaining).toFixed(1) + ' hours/week. Consider dropping a class, negotiating deadlines, or finding study partners.</p>';
     } else if (remaining < 5) {
-      html += '<p class=&rdquo;warning&rdquo;>Very tight. Little buffer for unexpected assignments or exams.</p>';
+      html += '<p class="warning">Very tight. Little buffer for unexpected assignments or exams.</p>';
     } else {
-      html += '<p style=&rdquo;margin: 0; color: var(--ink-soft); font-size: 0.93rem;&rdquo;>You have ' + remaining.toFixed(1) + ' hours left each week. Good balance.</p>';
+      html += '<p style="margin: 0; color: var(--ink-soft); font-size: 0.93rem;">You have ' + remaining.toFixed(1) + ' hours left each week. Good balance.</p>';
     }
 
     html += '</div>';

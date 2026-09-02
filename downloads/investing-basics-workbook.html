@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang=&rdquo;en&rdquo;>
+<html lang="en">
 <head>
-<meta charset=&rdquo;utf-8&rdquo;>
-<meta name=&rdquo;viewport&rdquo; content=&rdquo;width=device-width, initial-scale=1&rdquo;>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Investing Basics Workbook</title>
-<link rel=&rdquo;stylesheet&rdquo; href=&rdquo;https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap&rdquo;>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root {
     --paper: #f5f0e6;
@@ -20,7 +20,7 @@
     --cash: #7d8a6a;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme=&rdquo;light&rdquo;]) {
+    :root:not([data-theme="light"]) {
       --paper: #221d19; --paper-alt: #2b241f; --ink: #ede3d3; --ink-soft: #b9ac97;
       --barn: #e07856; --barn-deep: #f09274; --gold: #d9a94f; --line: #3c332b;
       --stock: #e07856; --bond: #d9a94f; --cash: #9fb083;
@@ -29,17 +29,17 @@
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
-    font-family: &rdquo;Karla&rdquo;, -apple-system, &rdquo;Segoe UI&rdquo;, sans-serif; line-height: 1.6;
+    font-family: "Karla", -apple-system, "Segoe UI", sans-serif; line-height: 1.6;
   }
   .wrap { max-width: 780px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
   .mark {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 700; font-size: 0.95rem;
+    font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 0.95rem;
     letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn);
     border: 1.5px solid var(--barn); border-radius: 3px; padding: 0.15rem 0.55rem;
     display: inline-block; transform: rotate(-2deg); margin-bottom: 1.5rem;
   }
   h1 {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 650;
+    font-family: "Fraunces", Georgia, serif; font-weight: 650;
     font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.1; margin: 0 0 0.6rem;
     text-wrap: balance; letter-spacing: -0.01em;
   }
@@ -51,10 +51,10 @@
   }
   section { border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 2.5rem; }
   h2 {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 600; font-size: 1.5rem;
+    font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.5rem;
     margin: 0 0 0.4rem; display: flex; align-items: baseline; gap: 0.6rem;
   }
-  h2 .num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 0.95rem; color: var(--barn); }
+  h2 .num { font-family: "IBM Plex Mono", monospace; font-size: 0.95rem; color: var(--barn); }
   .lead { color: var(--ink-soft); margin: 0 0 1.5rem; }
   .card {
     background: var(--paper-alt); border: 1px solid var(--line);
@@ -70,13 +70,13 @@
     border-radius: 6px; transition: background 0.12s ease;
   }
   label.opt:hover { background: rgba(140,59,46,0.06); }
-  input[type=&rdquo;radio&rdquo;], input[type=&rdquo;number&rdquo;] { accent-color: var(--barn); }
-  input[type=&rdquo;number&rdquo;] {
-    font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 1rem;
+  input[type="radio"], input[type="number"] { accent-color: var(--barn); }
+  input[type="number"] {
+    font-family: "IBM Plex Mono", monospace; font-size: 1rem;
     padding: 0.5rem 0.65rem; border: 1px solid var(--line); border-radius: 7px;
     background: var(--paper); color: var(--ink); width: 100%;
   }
-  input[type=&rdquo;number&rdquo;]:focus-visible, label.opt:focus-within {
+  input[type="number"]:focus-visible, label.opt:focus-within {
     outline: 2px solid var(--gold); outline-offset: 1px;
   }
   .field { margin-bottom: 1rem; }
@@ -90,7 +90,7 @@
     font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
   }
-  .verdict { font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .verdict { font-family: "Fraunces", Georgia, serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.4rem; }
   .alloc-bar {
     display: flex; height: 34px; border-radius: 7px; overflow: hidden;
     margin: 1rem 0 0.6rem; border: 1px solid var(--line);
@@ -108,7 +108,7 @@
   table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.93rem; }
   th, td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--line); }
   th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
-  td.num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; text-align: right; font-variant-numeric: tabular-nums; }
+  td.num { font-family: "IBM Plex Mono", monospace; text-align: right; font-variant-numeric: tabular-nums; }
   dl { margin: 0; }
   dt { font-weight: 700; margin-top: 1rem; }
   dd { margin: 0.2rem 0 0; color: var(--ink-soft); font-size: 0.94rem; }
@@ -125,19 +125,19 @@
 </style>
 </head>
 <body>
-<div class=&rdquo;wrap&rdquo;>
-  <span class=&rdquo;mark&rdquo;>Barnyard Templates</span>
+<div class="wrap">
+  <span class="mark">Barnyard Templates</span>
   <h1>Investing Basics Workbook</h1>
-  <p class=&rdquo;sub&rdquo;>Building your first portfolio &mdash; a plain-language workbook for someone about to open their first brokerage account.</p>
+  <p class="sub">Building your first portfolio &mdash; a plain-language workbook for someone about to open their first brokerage account.</p>
 
-  <div class=&rdquo;disclaimer&rdquo;>
+  <div class="disclaimer">
     <strong>Educational only.</strong> This workbook explains common concepts and uses widely-published rules of thumb to illustrate them. It is not personalized investment advice, and nothing here accounts for your full financial picture. For decisions that matter, talk to a licensed financial advisor or tax professional.
   </div>
 
-  <section style=&rdquo;border-top:none;padding-top:0;margin-top:0&rdquo;>
-    <h2><span class=&rdquo;num&rdquo;>01</span>What you're actually buying</h2>
-    <p class=&rdquo;lead&rdquo;>Three terms cover most of what a beginner needs.</p>
-    <div class=&rdquo;card&rdquo;>
+  <section style="border-top:none;padding-top:0;margin-top:0">
+    <h2><span class="num">01</span>What you're actually buying</h2>
+    <p class="lead">Three terms cover most of what a beginner needs.</p>
+    <div class="card">
       <dl>
         <dt>A stock</dt>
         <dd>A share of ownership in one company. If that one company does badly, so do you. This is why holding only a handful of individual stocks is riskier than it looks.</dd>
@@ -150,104 +150,104 @@
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>02</span>Risk tolerance worksheet</h2>
-    <p class=&rdquo;lead&rdquo;>Answer honestly about what you'd actually do, not what sounds brave.</p>
-    <div class=&rdquo;card&rdquo;>
-      <div class=&rdquo;q&rdquo;>
+    <h2><span class="num">02</span>Risk tolerance worksheet</h2>
+    <p class="lead">Answer honestly about what you'd actually do, not what sounds brave.</p>
+    <div class="card">
+      <div class="q">
         <p>1. Your portfolio drops 25% in a month. You:</p>
-        <div class=&rdquo;opts&rdquo;>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q1&rdquo; value=&rdquo;1&rdquo;> Sell most of it &mdash; I can't watch that happen</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q1&rdquo; value=&rdquo;2&rdquo;> Sell some and wait it out</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q1&rdquo; value=&rdquo;3&rdquo;> Change nothing</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q1&rdquo; value=&rdquo;4&rdquo;> Buy more while it's cheap</label>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q1" value="1"> Sell most of it &mdash; I can't watch that happen</label>
+          <label class="opt"><input type="radio" name="q1" value="2"> Sell some and wait it out</label>
+          <label class="opt"><input type="radio" name="q1" value="3"> Change nothing</label>
+          <label class="opt"><input type="radio" name="q1" value="4"> Buy more while it's cheap</label>
         </div>
       </div>
-      <div class=&rdquo;q&rdquo;>
+      <div class="q">
         <p>2. When will you need this money?</p>
-        <div class=&rdquo;opts&rdquo;>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q2&rdquo; value=&rdquo;1&rdquo;> Within 3 years</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q2&rdquo; value=&rdquo;2&rdquo;> 3&ndash;10 years</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q2&rdquo; value=&rdquo;3&rdquo;> 10&ndash;20 years</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q2&rdquo; value=&rdquo;4&rdquo;> 20+ years / retirement</label>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q2" value="1"> Within 3 years</label>
+          <label class="opt"><input type="radio" name="q2" value="2"> 3&ndash;10 years</label>
+          <label class="opt"><input type="radio" name="q2" value="3"> 10&ndash;20 years</label>
+          <label class="opt"><input type="radio" name="q2" value="4"> 20+ years / retirement</label>
         </div>
       </div>
-      <div class=&rdquo;q&rdquo;>
+      <div class="q">
         <p>3. If you lost your income tomorrow, how many months of expenses do you have saved separately?</p>
-        <div class=&rdquo;opts&rdquo;>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q3&rdquo; value=&rdquo;1&rdquo;> Less than 1</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q3&rdquo; value=&rdquo;2&rdquo;> 1&ndash;3</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q3&rdquo; value=&rdquo;3&rdquo;> 3&ndash;6</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q3&rdquo; value=&rdquo;4&rdquo;> 6+</label>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q3" value="1"> Less than 1</label>
+          <label class="opt"><input type="radio" name="q3" value="2"> 1&ndash;3</label>
+          <label class="opt"><input type="radio" name="q3" value="3"> 3&ndash;6</label>
+          <label class="opt"><input type="radio" name="q3" value="4"> 6+</label>
         </div>
       </div>
-      <div class=&rdquo;q&rdquo;>
+      <div class="q">
         <p>4. Your experience with investing so far:</p>
-        <div class=&rdquo;opts&rdquo;>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q4&rdquo; value=&rdquo;1&rdquo;> None &mdash; this is my first account</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q4&rdquo; value=&rdquo;2&rdquo;> A retirement account I don't really manage</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q4&rdquo; value=&rdquo;3&rdquo;> I've invested through a full market drop before</label>
-          <label class=&rdquo;opt&rdquo;><input type=&rdquo;radio&rdquo; name=&rdquo;q4&rdquo; value=&rdquo;4&rdquo;> Comfortable, I follow it closely</label>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q4" value="1"> None &mdash; this is my first account</label>
+          <label class="opt"><input type="radio" name="q4" value="2"> A retirement account I don't really manage</label>
+          <label class="opt"><input type="radio" name="q4" value="3"> I've invested through a full market drop before</label>
+          <label class="opt"><input type="radio" name="q4" value="4"> Comfortable, I follow it closely</label>
         </div>
       </div>
-      <div class=&rdquo;result&rdquo;>
-        <div class=&rdquo;result-label&rdquo;>Your risk profile</div>
-        <div class=&rdquo;verdict&rdquo; id=&rdquo;riskVerdict&rdquo;>Answer the four questions above</div>
-        <p id=&rdquo;riskNote&rdquo; style=&rdquo;margin:0;color:var(--ink-soft);font-size:0.93rem&rdquo;></p>
+      <div class="result">
+        <div class="result-label">Your risk profile</div>
+        <div class="verdict" id="riskVerdict">Answer the four questions above</div>
+        <p id="riskNote" style="margin:0;color:var(--ink-soft);font-size:0.93rem"></p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>03</span>Allocation illustration</h2>
-    <p class=&rdquo;lead&rdquo;>A starting point built from the common &rdquo;110 minus your age&rdquo; stock/bond rule of thumb, then nudged by your risk answers above. A rule of thumb is a conversation starter, not a recommendation.</p>
-    <div class=&rdquo;card&rdquo;>
-      <div class=&rdquo;field&rdquo; style=&rdquo;max-width:200px&rdquo;>
-        <label for=&rdquo;age&rdquo;>Your age</label>
-        <input type=&rdquo;number&rdquo; id=&rdquo;age&rdquo; min=&rdquo;16&rdquo; max=&rdquo;100&rdquo; value=&rdquo;30&rdquo;>
+    <h2><span class="num">03</span>Allocation illustration</h2>
+    <p class="lead">A starting point built from the common "110 minus your age" stock/bond rule of thumb, then nudged by your risk answers above. A rule of thumb is a conversation starter, not a recommendation.</p>
+    <div class="card">
+      <div class="field" style="max-width:200px">
+        <label for="age">Your age</label>
+        <input type="number" id="age" min="16" max="100" value="30">
       </div>
-      <div class=&rdquo;alloc-bar&rdquo; id=&rdquo;allocBar&rdquo;>
-        <span class=&rdquo;seg-stock&rdquo; style=&rdquo;width:80%&rdquo;>80%</span>
-        <span class=&rdquo;seg-bond&rdquo; style=&rdquo;width:15%&rdquo;>15%</span>
-        <span class=&rdquo;seg-cash&rdquo; style=&rdquo;width:5%&rdquo;>5%</span>
+      <div class="alloc-bar" id="allocBar">
+        <span class="seg-stock" style="width:80%">80%</span>
+        <span class="seg-bond" style="width:15%">15%</span>
+        <span class="seg-cash" style="width:5%">5%</span>
       </div>
-      <div class=&rdquo;legend&rdquo;>
-        <span><i class=&rdquo;seg-stock&rdquo; style=&rdquo;background:var(--stock)&rdquo;></i>Stocks / stock index funds</span>
-        <span><i class=&rdquo;seg-bond&rdquo; style=&rdquo;background:var(--bond)&rdquo;></i>Bonds</span>
-        <span><i class=&rdquo;seg-cash&rdquo; style=&rdquo;background:var(--cash)&rdquo;></i>Cash</span>
+      <div class="legend">
+        <span><i class="seg-stock" style="background:var(--stock)"></i>Stocks / stock index funds</span>
+        <span><i class="seg-bond" style="background:var(--bond)"></i>Bonds</span>
+        <span><i class="seg-cash" style="background:var(--cash)"></i>Cash</span>
       </div>
     </div>
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>04</span>Monthly contribution projector</h2>
-    <p class=&rdquo;lead&rdquo;>What consistent contributions look like over time. Uses a fixed annual return you choose &mdash; real markets don't return a smooth number, so treat these as illustrations of <em>compounding</em>, not forecasts.</p>
-    <div class=&rdquo;card&rdquo;>
-      <div class=&rdquo;grid2&rdquo;>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;start&rdquo;>Starting amount ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;start&rdquo; min=&rdquo;0&rdquo; step=&rdquo;100&rdquo; value=&rdquo;1000&rdquo;>
+    <h2><span class="num">04</span>Monthly contribution projector</h2>
+    <p class="lead">What consistent contributions look like over time. Uses a fixed annual return you choose &mdash; real markets don't return a smooth number, so treat these as illustrations of <em>compounding</em>, not forecasts.</p>
+    <div class="card">
+      <div class="grid2">
+        <div class="field">
+          <label for="start">Starting amount ($)</label>
+          <input type="number" id="start" min="0" step="100" value="1000">
         </div>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;monthly&rdquo;>Monthly contribution ($)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;monthly&rdquo; min=&rdquo;0&rdquo; step=&rdquo;25&rdquo; value=&rdquo;250&rdquo;>
+        <div class="field">
+          <label for="monthly">Monthly contribution ($)</label>
+          <input type="number" id="monthly" min="0" step="25" value="250">
         </div>
-        <div class=&rdquo;field&rdquo;>
-          <label for=&rdquo;rate&rdquo;>Assumed annual return (%)</label>
-          <input type=&rdquo;number&rdquo; id=&rdquo;rate&rdquo; min=&rdquo;0&rdquo; max=&rdquo;20&rdquo; step=&rdquo;0.5&rdquo; value=&rdquo;7&rdquo;>
+        <div class="field">
+          <label for="rate">Assumed annual return (%)</label>
+          <input type="number" id="rate" min="0" max="20" step="0.5" value="7">
         </div>
       </div>
       <table>
         <thead>
-          <tr><th>After</th><th style=&rdquo;text-align:right&rdquo;>You contributed</th><th style=&rdquo;text-align:right&rdquo;>Projected value</th><th style=&rdquo;text-align:right&rdquo;>Growth</th></tr>
+          <tr><th>After</th><th style="text-align:right">You contributed</th><th style="text-align:right">Projected value</th><th style="text-align:right">Growth</th></tr>
         </thead>
-        <tbody id=&rdquo;projRows&rdquo;></tbody>
+        <tbody id="projRows"></tbody>
       </table>
     </div>
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>05</span>Before you buy anything &mdash; checklist</h2>
-    <div class=&rdquo;card&rdquo;>
+    <h2><span class="num">05</span>Before you buy anything &mdash; checklist</h2>
+    <div class="card">
       <dl>
         <dt>☐ High-interest debt handled first</dt>
         <dd>A credit card at 24% reliably costs you more than a portfolio is likely to make. Paying it down is the higher-certainty return.</dd>
@@ -258,7 +258,7 @@
         <dt>☐ You know the fund's expense ratio</dt>
         <dd>An expense ratio is the annual fee, as a % of your balance. The difference between 0.03% and 0.75% compounds into real money over decades.</dd>
         <dt>☐ You have a contribution schedule, not a timing plan</dt>
-        <dd>Deciding &rdquo;$X on the 1st of each month&rdquo; removes the hardest repeated decision &mdash; when to buy.</dd>
+        <dd>Deciding "$X on the 1st of each month" removes the hardest repeated decision &mdash; when to buy.</dd>
       </dl>
     </div>
   </section>
@@ -275,7 +275,7 @@
   function riskScore() {
     let total = 0, answered = 0;
     ['q1','q2','q3','q4'].forEach((q) => {
-      const el = document.querySelector('input[name=&rdquo;' + q + '&rdquo;]:checked');
+      const el = document.querySelector('input[name="' + q + '"]:checked');
       if (el) { total += Number(el.value); answered++; }
     });
     return { total, answered };
@@ -320,9 +320,9 @@
     const bond = Math.max(0, 100 - stock - cash);
     const bar = document.getElementById('allocBar');
     bar.innerHTML =
-      '<span class=&rdquo;seg-stock&rdquo; style=&rdquo;width:' + stock + '%&rdquo;>' + stock + '%</span>' +
-      '<span class=&rdquo;seg-bond&rdquo; style=&rdquo;width:' + bond + '%&rdquo;>' + (bond >= 8 ? bond + '%' : '') + '</span>' +
-      '<span class=&rdquo;seg-cash&rdquo; style=&rdquo;width:' + cash + '%&rdquo;>' + (cash >= 8 ? cash + '%' : '') + '</span>';
+      '<span class="seg-stock" style="width:' + stock + '%">' + stock + '%</span>' +
+      '<span class="seg-bond" style="width:' + bond + '%">' + (bond >= 8 ? bond + '%' : '') + '</span>' +
+      '<span class="seg-cash" style="width:' + cash + '%">' + (cash >= 8 ? cash + '%' : '') + '</span>';
   }
 
   function updateProjection() {
@@ -341,14 +341,14 @@
     document.getElementById('projRows').innerHTML = rows
       .map((x) =>
         '<tr><td>' + x.years + ' years</td>' +
-        '<td class=&rdquo;num&rdquo;>' + fmt(x.contributed) + '</td>' +
-        '<td class=&rdquo;num&rdquo;>' + fmt(x.value) + '</td>' +
-        '<td class=&rdquo;num&rdquo;>' + fmt(x.growth) + '</td></tr>'
+        '<td class="num">' + fmt(x.contributed) + '</td>' +
+        '<td class="num">' + fmt(x.value) + '</td>' +
+        '<td class="num">' + fmt(x.growth) + '</td></tr>'
       )
       .join('');
   }
 
-  document.querySelectorAll('input[type=&rdquo;radio&rdquo;]').forEach((el) => el.addEventListener('change', updateRisk));
+  document.querySelectorAll('input[type="radio"]').forEach((el) => el.addEventListener('change', updateRisk));
   document.getElementById('age').addEventListener('input', updateAlloc);
   ['start', 'monthly', 'rate'].forEach((id) =>
     document.getElementById(id).addEventListener('input', updateProjection)

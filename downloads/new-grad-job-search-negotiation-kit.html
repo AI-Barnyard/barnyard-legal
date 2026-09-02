@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang=&rdquo;en&rdquo;>
+<html lang="en">
 <head>
-<meta charset=&rdquo;utf-8&rdquo;>
-<meta name=&rdquo;viewport&rdquo; content=&rdquo;width=device-width, initial-scale=1&rdquo;>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>New Grad Job Search & Salary Negotiation Kit</title>
-<link rel=&rdquo;stylesheet&rdquo; href=&rdquo;https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap&rdquo;>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root {
     --paper: #f5f0e6;
@@ -17,7 +17,7 @@
     --line: #d8cbb3;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme=&rdquo;light&rdquo;]) {
+    :root:not([data-theme="light"]) {
       --paper: #221d19; --paper-alt: #2b241f; --ink: #ede3d3; --ink-soft: #b9ac97;
       --barn: #e07856; --barn-deep: #f09274; --gold: #d9a94f; --line: #3c332b;
     }
@@ -25,17 +25,17 @@
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
-    font-family: &rdquo;Karla&rdquo;, -apple-system, &rdquo;Segoe UI&rdquo;, sans-serif; line-height: 1.6;
+    font-family: "Karla", -apple-system, "Segoe UI", sans-serif; line-height: 1.6;
   }
   .wrap { max-width: 780px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
   .mark {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 700; font-size: 0.95rem;
+    font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 0.95rem;
     letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn);
     border: 1.5px solid var(--barn); border-radius: 3px; padding: 0.15rem 0.55rem;
     display: inline-block; transform: rotate(-2deg); margin-bottom: 1.5rem;
   }
   h1 {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 650;
+    font-family: "Fraunces", Georgia, serif; font-weight: 650;
     font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.1; margin: 0 0 0.6rem;
     text-wrap: balance; letter-spacing: -0.01em;
   }
@@ -47,10 +47,10 @@
   }
   section { border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 2.5rem; }
   h2 {
-    font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-weight: 600; font-size: 1.5rem;
+    font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.5rem;
     margin: 0 0 0.4rem; display: flex; align-items: baseline; gap: 0.6rem;
   }
-  h2 .num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 0.95rem; color: var(--barn); }
+  h2 .num { font-family: "IBM Plex Mono", monospace; font-size: 0.95rem; color: var(--barn); }
   .lead { color: var(--ink-soft); margin: 0 0 1.5rem; }
   .card {
     background: var(--paper-alt); border: 1px solid var(--line);
@@ -59,12 +59,12 @@
   .field { margin-bottom: 1rem; }
   .field label { display: block; font-size: 0.82rem; font-weight: 700;
     letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
-  input[type=&rdquo;number&rdquo;], select {
-    font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; font-size: 1rem;
+  input[type="number"], select {
+    font-family: "IBM Plex Mono", monospace; font-size: 1rem;
     padding: 0.5rem 0.65rem; border: 1px solid var(--line); border-radius: 7px;
     background: var(--paper); color: var(--ink); width: 100%;
   }
-  input[type=&rdquo;number&rdquo;]:focus-visible {
+  input[type="number"]:focus-visible {
     outline: 2px solid var(--gold); outline-offset: 1px;
   }
   .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
@@ -75,11 +75,11 @@
     font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
   }
-  .verdict { font-family: &rdquo;Fraunces&rdquo;, Georgia, serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .verdict { font-family: "Fraunces", Georgia, serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.4rem; }
   table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.93rem; }
   th, td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--line); }
   th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
-  td.num { font-family: &rdquo;IBM Plex Mono&rdquo;, monospace; text-align: right; font-variant-numeric: tabular-nums; }
+  td.num { font-family: "IBM Plex Mono", monospace; text-align: right; font-variant-numeric: tabular-nums; }
   td.best { background: rgba(186, 154, 62, 0.15); font-weight: 600; }
   .script-box {
     background: var(--paper); border: 1px solid var(--line); border-radius: 8px;
@@ -105,127 +105,127 @@
 </style>
 </head>
 <body>
-<div class=&rdquo;wrap&rdquo;>
-  <span class=&rdquo;mark&rdquo;>Barnyard Templates</span>
+<div class="wrap">
+  <span class="mark">Barnyard Templates</span>
   <h1>New Grad Job Search Tracker &amp; Salary Negotiation Kit</h1>
-  <p class=&rdquo;sub&rdquo;>Everything a new graduate needs to run a real job search: offer comparison with cost-of-living adjustment, application tracker, and negotiation scripts.</p>
+  <p class="sub">Everything a new graduate needs to run a real job search: offer comparison with cost-of-living adjustment, application tracker, and negotiation scripts.</p>
 
-  <div class=&rdquo;disclaimer&rdquo;>
+  <div class="disclaimer">
     <strong>Not legal or tax advice.</strong> These templates and scripts are educational examples based on common practice. Use them as a starting point, not gospel. Negotiate respectfully and in good faith. If the company has equity, understand vesting schedules and consult a tax professional on how it's valued.
   </div>
 
-  <section style=&rdquo;border-top:none;padding-top:0;margin-top:0&rdquo;>
-    <h2><span class=&rdquo;num&rdquo;>01</span>Offer Comparison Calculator</h2>
-    <p class=&rdquo;lead&rdquo;>Enter multiple offers side by side. The calculator adjusts for cost-of-living differences so you can compare apples to apples.</p>
-    <div class=&rdquo;card&rdquo;>
-      <div class=&rdquo;field&rdquo;>
-        <label for=&rdquo;colIndex&rdquo;>Your current/baseline cost-of-living index (use 100)</label>
-        <input type=&rdquo;number&rdquo; id=&rdquo;colIndex&rdquo; min=&rdquo;50&rdquo; max=&rdquo;150&rdquo; step=&rdquo;5&rdquo; value=&rdquo;100&rdquo;>
+  <section style="border-top:none;padding-top:0;margin-top:0">
+    <h2><span class="num">01</span>Offer Comparison Calculator</h2>
+    <p class="lead">Enter multiple offers side by side. The calculator adjusts for cost-of-living differences so you can compare apples to apples.</p>
+    <div class="card">
+      <div class="field">
+        <label for="colIndex">Your current/baseline cost-of-living index (use 100)</label>
+        <input type="number" id="colIndex" min="50" max="150" step="5" value="100">
       </div>
-      <p style=&rdquo;font-size: 0.9rem; color: var(--ink-soft); margin: 0.5rem 0 1.5rem;&rdquo;>Enter index values: 100 = your current city. NYC is ~190, SF ~220, rural Midwest ~70. Find indices at <strong>meric.org</strong> or <strong>numbeo.com</strong>.</p>
+      <p style="font-size: 0.9rem; color: var(--ink-soft); margin: 0.5rem 0 1.5rem;">Enter index values: 100 = your current city. NYC is ~190, SF ~220, rural Midwest ~70. Find indices at <strong>meric.org</strong> or <strong>numbeo.com</strong>.</p>
 
       <table>
         <thead>
           <tr>
             <th>Offer</th>
-            <th style=&rdquo;text-align:right&rdquo;>Base Salary</th>
-            <th style=&rdquo;text-align:right&rdquo;>Signing Bonus</th>
-            <th style=&rdquo;text-align:right&rdquo;>Annual Bonus %</th>
-            <th style=&rdquo;text-align:right&rdquo;>Equity Value</th>
-            <th style=&rdquo;text-align:right&rdquo;>Benefits Value</th>
-            <th style=&rdquo;text-align:right&rdquo;>COL Index</th>
+            <th style="text-align:right">Base Salary</th>
+            <th style="text-align:right">Signing Bonus</th>
+            <th style="text-align:right">Annual Bonus %</th>
+            <th style="text-align:right">Equity Value</th>
+            <th style="text-align:right">Benefits Value</th>
+            <th style="text-align:right">COL Index</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Offer A</strong></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-base&rdquo; value=&rdquo;85000&rdquo; min=&rdquo;0&rdquo; step=&rdquo;1000&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-sign&rdquo; value=&rdquo;10000&rdquo; min=&rdquo;0&rdquo; step=&rdquo;1000&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-bonus&rdquo; value=&rdquo;10&rdquo; min=&rdquo;0&rdquo; max=&rdquo;50&rdquo; step=&rdquo;1&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-equity&rdquo; value=&rdquo;5000&rdquo; min=&rdquo;0&rdquo; step=&rdquo;500&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-benefits&rdquo; value=&rdquo;8000&rdquo; min=&rdquo;0&rdquo; step=&rdquo;500&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-col&rdquo; value=&rdquo;100&rdquo; min=&rdquo;50&rdquo; max=&rdquo;200&rdquo; step=&rdquo;5&rdquo; style=&rdquo;width:100%&rdquo;></td>
+            <td><input type="number" class="offer-base" value="85000" min="0" step="1000" style="width:100%"></td>
+            <td><input type="number" class="offer-sign" value="10000" min="0" step="1000" style="width:100%"></td>
+            <td><input type="number" class="offer-bonus" value="10" min="0" max="50" step="1" style="width:100%"></td>
+            <td><input type="number" class="offer-equity" value="5000" min="0" step="500" style="width:100%"></td>
+            <td><input type="number" class="offer-benefits" value="8000" min="0" step="500" style="width:100%"></td>
+            <td><input type="number" class="offer-col" value="100" min="50" max="200" step="5" style="width:100%"></td>
           </tr>
           <tr>
             <td><strong>Offer B</strong></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-base&rdquo; value=&rdquo;90000&rdquo; min=&rdquo;0&rdquo; step=&rdquo;1000&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-sign&rdquo; value=&rdquo;5000&rdquo; min=&rdquo;0&rdquo; step=&rdquo;1000&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-bonus&rdquo; value=&rdquo;15&rdquo; min=&rdquo;0&rdquo; max=&rdquo;50&rdquo; step=&rdquo;1&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-equity&rdquo; value=&rdquo;3000&rdquo; min=&rdquo;0&rdquo; step=&rdquo;500&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-benefits&rdquo; value=&rdquo;7000&rdquo; min=&rdquo;0&rdquo; step=&rdquo;500&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-col&rdquo; value=&rdquo;120&rdquo; min=&rdquo;50&rdquo; max=&rdquo;200&rdquo; step=&rdquo;5&rdquo; style=&rdquo;width:100%&rdquo;></td>
+            <td><input type="number" class="offer-base" value="90000" min="0" step="1000" style="width:100%"></td>
+            <td><input type="number" class="offer-sign" value="5000" min="0" step="1000" style="width:100%"></td>
+            <td><input type="number" class="offer-bonus" value="15" min="0" max="50" step="1" style="width:100%"></td>
+            <td><input type="number" class="offer-equity" value="3000" min="0" step="500" style="width:100%"></td>
+            <td><input type="number" class="offer-benefits" value="7000" min="0" step="500" style="width:100%"></td>
+            <td><input type="number" class="offer-col" value="120" min="50" max="200" step="5" style="width:100%"></td>
           </tr>
           <tr>
             <td><strong>Offer C</strong></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-base&rdquo; value=&rdquo;0&rdquo; min=&rdquo;0&rdquo; step=&rdquo;1000&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-sign&rdquo; value=&rdquo;0&rdquo; min=&rdquo;0&rdquo; step=&rdquo;1000&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-bonus&rdquo; value=&rdquo;0&rdquo; min=&rdquo;0&rdquo; max=&rdquo;50&rdquo; step=&rdquo;1&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-equity&rdquo; value=&rdquo;0&rdquo; min=&rdquo;0&rdquo; step=&rdquo;500&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-benefits&rdquo; value=&rdquo;0&rdquo; min=&rdquo;0&rdquo; step=&rdquo;500&rdquo; style=&rdquo;width:100%&rdquo;></td>
-            <td><input type=&rdquo;number&rdquo; class=&rdquo;offer-col&rdquo; value=&rdquo;100&rdquo; min=&rdquo;50&rdquo; max=&rdquo;200&rdquo; step=&rdquo;5&rdquo; style=&rdquo;width:100%&rdquo;></td>
+            <td><input type="number" class="offer-base" value="0" min="0" step="1000" style="width:100%"></td>
+            <td><input type="number" class="offer-sign" value="0" min="0" step="1000" style="width:100%"></td>
+            <td><input type="number" class="offer-bonus" value="0" min="0" max="50" step="1" style="width:100%"></td>
+            <td><input type="number" class="offer-equity" value="0" min="0" step="500" style="width:100%"></td>
+            <td><input type="number" class="offer-benefits" value="0" min="0" step="500" style="width:100%"></td>
+            <td><input type="number" class="offer-col" value="100" min="50" max="200" step="5" style="width:100%"></td>
           </tr>
         </tbody>
       </table>
 
-      <div id=&rdquo;offerResults&rdquo;></div>
+      <div id="offerResults"></div>
     </div>
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>02</span>Application Tracker Reference</h2>
-    <p class=&rdquo;lead&rdquo;>Keep this table filled out so you know where you stand at each company.</p>
-    <div class=&rdquo;card&rdquo;>
-      <table class=&rdquo;tracker-table&rdquo;>
+    <h2><span class="num">02</span>Application Tracker Reference</h2>
+    <p class="lead">Keep this table filled out so you know where you stand at each company.</p>
+    <div class="card">
+      <table class="tracker-table">
         <thead>
           <tr><th>Company</th><th>Role</th><th>Applied</th><th>Phone Screen</th><th>Technical</th><th>Final Interview</th><th>Decision</th><th>Notes</th></tr>
         </thead>
         <tbody>
-          <tr><td colspan=&rdquo;8&rdquo; style=&rdquo;text-align:center; padding: 2rem; color: var(--ink-soft);&rdquo;>Print this page and fill in by hand, or copy this table into a spreadsheet (Google Sheets, Excel) and update weekly. Status: Not Started, In Progress, Passed, Rejected, Offer Accepted.</td></tr>
+          <tr><td colspan="8" style="text-align:center; padding: 2rem; color: var(--ink-soft);">Print this page and fill in by hand, or copy this table into a spreadsheet (Google Sheets, Excel) and update weekly. Status: Not Started, In Progress, Passed, Rejected, Offer Accepted.</td></tr>
         </tbody>
       </table>
-      <p style=&rdquo;margin-top: 1rem; font-size: 0.9rem; color: var(--ink-soft);&rdquo;><strong>Why track it:</strong> After 50 applications, memory fails. A table lets you see patterns (which companies ghost, which move fast) and shows you're making progress even during dry spells.</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--ink-soft);"><strong>Why track it:</strong> After 50 applications, memory fails. A table lets you see patterns (which companies ghost, which move fast) and shows you're making progress even during dry spells.</p>
     </div>
   </section>
 
   <section>
-    <h2><span class=&rdquo;num&rdquo;>03</span>Salary Negotiation Scripts</h2>
-    <p class=&rdquo;lead&rdquo;>These are word-for-word responses to the most common pushback lines. Adapt to your situation, but keep the structure: acknowledge, explain value, request.</p>
-    <div class=&rdquo;card&rdquo;>
+    <h2><span class="num">03</span>Salary Negotiation Scripts</h2>
+    <p class="lead">These are word-for-word responses to the most common pushback lines. Adapt to your situation, but keep the structure: acknowledge, explain value, request.</p>
+    <div class="card">
 
-      <div class=&rdquo;script-box&rdquo;>
-        <div class=&rdquo;script-title&rdquo;>When they say: &quot;We have a strict band for entry-level.&quot;</div>
-        <div class=&rdquo;script-text&rdquo;>&quot;I appreciate the transparency. I'm excited about this role. Based on the scope &mdash; [mention 2&ndash;3 specific responsibilities] &mdash; and my [specific skill or project], I believe $[X] is fair. Can you see any room to move?&quot;</div>
-        <div class=&rdquo;script-response&rdquo;><strong>Why it works:</strong> You acknowledged the constraint but showed you researched the role, not just the title. You aren't asking for the moon.</div>
+      <div class="script-box">
+        <div class="script-title">When they say: &quot;We have a strict band for entry-level.&quot;</div>
+        <div class="script-text">&quot;I appreciate the transparency. I'm excited about this role. Based on the scope &mdash; [mention 2&ndash;3 specific responsibilities] &mdash; and my [specific skill or project], I believe $[X] is fair. Can you see any room to move?&quot;</div>
+        <div class="script-response"><strong>Why it works:</strong> You acknowledged the constraint but showed you researched the role, not just the title. You aren't asking for the moon.</div>
       </div>
 
-      <div class=&rdquo;script-box&rdquo;>
-        <div class=&rdquo;script-title&rdquo;>When they say: &quot;We can't do more base, but we can add $X bonus.&quot;</div>
-        <div class=&rdquo;script-text&rdquo;>&quot;Thank you. I want to make sure I understand the bonus structure. What's the historical payout rate, and how is it measured? Also, would you have flexibility to increase the signing bonus instead, since that's guaranteed?&quot;</div>
-        <div class=&rdquo;script-response&rdquo;><strong>Why it works:</strong> Bonuses can evaporate. You're asking smart questions and showing you know the difference. Signing bonus is money in hand, and it's usually easier to negotiate than base or bonus payout.</div>
+      <div class="script-box">
+        <div class="script-title">When they say: &quot;We can't do more base, but we can add $X bonus.&quot;</div>
+        <div class="script-text">&quot;Thank you. I want to make sure I understand the bonus structure. What's the historical payout rate, and how is it measured? Also, would you have flexibility to increase the signing bonus instead, since that's guaranteed?&quot;</div>
+        <div class="script-response"><strong>Why it works:</strong> Bonuses can evaporate. You're asking smart questions and showing you know the difference. Signing bonus is money in hand, and it's usually easier to negotiate than base or bonus payout.</div>
       </div>
 
-      <div class=&rdquo;script-box&rdquo;>
-        <div class=&rdquo;script-title&rdquo;>When they say: &quot;Everyone starts at the same salary.&quot;</div>
-        <div class=&rdquo;script-text&rdquo;>&quot;I understand consistency is important. I also see this as an investment in me. My background in [skill/project] means I'll contribute faster than a typical grad. What does 'same' look like, and is there any flexibility for proven expertise?&quot;</div>
-        <div class=&rdquo;script-response&rdquo;><strong>Why it works:</strong> You're reframing the negotiation from &quot;I want more money&quot; to &quot;I'll deliver more value.&quot; You also forced them to name the number.</div>
+      <div class="script-box">
+        <div class="script-title">When they say: &quot;Everyone starts at the same salary.&quot;</div>
+        <div class="script-text">&quot;I understand consistency is important. I also see this as an investment in me. My background in [skill/project] means I'll contribute faster than a typical grad. What does 'same' look like, and is there any flexibility for proven expertise?&quot;</div>
+        <div class="script-response"><strong>Why it works:</strong> You're reframing the negotiation from &quot;I want more money&quot; to &quot;I'll deliver more value.&quot; You also forced them to name the number.</div>
       </div>
 
-      <div class=&rdquo;script-box&rdquo;>
-        <div class=&rdquo;script-title&rdquo;>When they say: &quot;You don't have experience to ask for that.&quot;</div>
-        <div class=&rdquo;script-text&rdquo;>&quot;I hear that. My ask is based on market research for this role in this city, not seniority. I'm invested in proving myself &mdash; I know I'm early in my career. What would make you comfortable with this number?&quot;</div>
-        <div class=&rdquo;script-response&rdquo;><strong>Why it works:</strong> You separated market value from experience. You also asked them to own the decision instead of shutting down.</div>
+      <div class="script-box">
+        <div class="script-title">When they say: &quot;You don't have experience to ask for that.&quot;</div>
+        <div class="script-text">&quot;I hear that. My ask is based on market research for this role in this city, not seniority. I'm invested in proving myself &mdash; I know I'm early in my career. What would make you comfortable with this number?&quot;</div>
+        <div class="script-response"><strong>Why it works:</strong> You separated market value from experience. You also asked them to own the decision instead of shutting down.</div>
       </div>
 
-      <div class=&rdquo;script-box&rdquo;>
-        <div class=&rdquo;script-title&rdquo;>When they say: &quot;We can't compete with the Big Tech companies.&quot;</div>
-        <div class=&rdquo;script-text&rdquo;>&quot;I'm not trying to be a Big Tech company. I chose you because [mission/culture/learning/specific reason]. My ask reflects your city and market, not SF salaries. Here's what market research shows for [role] in [city]: [range]. Can we find a number in that range?&quot;</div>
-        <div class=&rdquo;script-response&rdquo;><strong>Why it works:</strong> You complimented the company, set a boundary (you aren't chasing startup pipe dreams), and gave them concrete data. Bring a printed salary guide (levels.fyi, glassdoor, payscale) to back it up if needed.</div>
+      <div class="script-box">
+        <div class="script-title">When they say: &quot;We can't compete with the Big Tech companies.&quot;</div>
+        <div class="script-text">&quot;I'm not trying to be a Big Tech company. I chose you because [mission/culture/learning/specific reason]. My ask reflects your city and market, not SF salaries. Here's what market research shows for [role] in [city]: [range]. Can we find a number in that range?&quot;</div>
+        <div class="script-response"><strong>Why it works:</strong> You complimented the company, set a boundary (you aren't chasing startup pipe dreams), and gave them concrete data. Bring a printed salary guide (levels.fyi, glassdoor, payscale) to back it up if needed.</div>
       </div>
 
-      <div class=&rdquo;script-box&rdquo;>
-        <div class=&rdquo;script-title&rdquo;>Last resort: &quot;I need to think about it. When can we talk tomorrow?&quot;</div>
-        <div class=&rdquo;script-text&rdquo;>Don't decide on the spot. Sleep on it. Call back the next day and either accept or make a counteroffer. Most companies expect one round of back-and-forth.</div>
-        <div class=&rdquo;script-response&rdquo;><strong>Why it works:</strong> Silence and delay are your friends. Let them sit with your counteroffer overnight. They often come back with a bump.</div>
+      <div class="script-box">
+        <div class="script-title">Last resort: &quot;I need to think about it. When can we talk tomorrow?&quot;</div>
+        <div class="script-text">Don't decide on the spot. Sleep on it. Call back the next day and either accept or make a counteroffer. Most companies expect one round of back-and-forth.</div>
+        <div class="script-response"><strong>Why it works:</strong> Silence and delay are your friends. Let them sit with your counteroffer overnight. They often come back with a bump.</div>
       </div>
 
     </div>
@@ -278,15 +278,15 @@
 
     const best = offers.reduce((max, o) => o.colAdjustedTotal > max.colAdjustedTotal ? o : max);
 
-    let html = `<div class=&rdquo;result&rdquo;>
-      <div class=&rdquo;result-label&rdquo;>COL-Adjusted Comparison (Year 1)</div>
+    let html = `<div class="result">
+      <div class="result-label">COL-Adjusted Comparison (Year 1)</div>
       <table>
         <thead>
           <tr>
             <th>Offer</th>
-            <th style=&rdquo;text-align:right&rdquo;>Year 1 Gross</th>
-            <th style=&rdquo;text-align:right&rdquo;>COL-Adjusted</th>
-            <th style=&rdquo;text-align:right&rdquo;>Breakdown (Base + Bonus + Equity + Benefits + Sign)</th>
+            <th style="text-align:right">Year 1 Gross</th>
+            <th style="text-align:right">COL-Adjusted</th>
+            <th style="text-align:right">Breakdown (Base + Bonus + Equity + Benefits + Sign)</th>
           </tr>
         </thead>
         <tbody>`;
@@ -294,16 +294,16 @@
     offers.forEach((o, i) => {
       const label = String.fromCharCode(65 + i);
       const isBest = o.colAdjustedTotal === best.colAdjustedTotal;
-      html += `<tr${isBest ? ' class=&rdquo;best&rdquo;' : ''}>
+      html += `<tr${isBest ? ' class="best"' : ''}>
         <td><strong>${label}</strong></td>
-        <td class=&rdquo;num&rdquo;>${fmt(o.totalAnnual)}</td>
-        <td class=&rdquo;num&rdquo;>${fmt(o.colAdjustedTotal)}</td>
-        <td class=&rdquo;num&rdquo; style=&rdquo;font-size: 0.85rem;&rdquo;>${fmt(o.base)} + ${fmt(o.base * o.bonus / 100)} + ${fmt(o.equity)} + ${fmt(o.benefits)} + ${fmt(o.sign)}</td>
+        <td class="num">${fmt(o.totalAnnual)}</td>
+        <td class="num">${fmt(o.colAdjustedTotal)}</td>
+        <td class="num" style="font-size: 0.85rem;">${fmt(o.base)} + ${fmt(o.base * o.bonus / 100)} + ${fmt(o.equity)} + ${fmt(o.benefits)} + ${fmt(o.sign)}</td>
       </tr>`;
     });
 
     html += `</tbody></table>
-      <p style=&rdquo;margin-top: 1rem; font-size: 0.9rem; color: var(--ink-soft);&rdquo;>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--ink-soft);">
         <strong>Note:</strong> This shows Year 1 total comp. Equity often vests over 4 years (1/4 per year, usually). Year 2 onward depends on promotions, raises, and bonus payouts. Choose based on learning, growth, and long-term potential, not just Year 1 gross.
       </p>
     </div>`;
@@ -311,7 +311,7 @@
     document.getElementById('offerResults').innerHTML = html;
   }
 
-  document.querySelectorAll('input[type=&rdquo;number&rdquo;]').forEach(el => {
+  document.querySelectorAll('input[type="number"]').forEach(el => {
     el.addEventListener('input', calculateOffers);
   });
 
