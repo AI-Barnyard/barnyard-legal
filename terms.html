@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Barnyard Terms of Service</title>
+<style>
+  :root {
+    --paper: #f5f0e6;
+    --paper-alt: #ede4d3;
+    --ink: #2b2320;
+    --ink-soft: #5b4f45;
+    --barn: #8c3b2e;
+    --barn-deep: #6b2a21;
+    --gold: #b98a3e;
+    --line: #d8cbb3;
+    --focus: #2b6cb0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #221d19;
+      --paper-alt: #2b241f;
+      --ink: #ede3d3;
+      --ink-soft: #b9ac97;
+      --barn: #e07856;
+      --barn-deep: #f09274;
+      --gold: #d9a94f;
+      --line: #3c332b;
+      --focus: #7db3ea;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #221d19;
+    --paper-alt: #2b241f;
+    --ink: #ede3d3;
+    --ink-soft: #b9ac97;
+    --barn: #e07856;
+    --barn-deep: #f09274;
+    --gold: #d9a94f;
+    --line: #3c332b;
+    --focus: #7db3ea;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Karla", -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.65;
+  }
+
+  a { color: var(--barn); text-decoration-color: var(--line); text-underline-offset: 3px; }
+  a:hover { color: var(--barn-deep); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  header.doc {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .mark {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .mark .glyph {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--barn);
+    border: 1.5px solid var(--barn);
+    border-radius: 3px;
+    padding: 0.15rem 0.5rem;
+    transform: rotate(-2deg);
+  }
+
+  .mark .name {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 560;
+    font-size: clamp(2.1rem, 5vw, 2.85rem);
+    line-height: 1.08;
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  .stamp {
+    font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .stamp::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    background: var(--gold);
+    display: inline-block;
+    border-radius: 1px;
+  }
+
+  .lede {
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+
+  nav.toc {
+    background: var(--paper-alt);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  nav.toc .toc-label {
+    font-family: "Karla", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  nav.toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  nav.toc a {
+    font-size: 0.95rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  nav.toc a:hover { color: var(--barn); text-decoration: underline; }
+
+  nav.toc .num {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--gold);
+    margin-right: 0.55rem;
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding-top: 2.75rem;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 1.5rem;
+  }
+  section:first-of-type { border-top: none; padding-top: 0; }
+
+  section h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 560;
+    font-size: 1.45rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0 0 1rem;
+    text-wrap: balance;
+  }
+
+  section h2 .num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1rem;
+    color: var(--barn);
+    font-weight: 500;
+  }
+
+  section p, section li { max-width: 65ch; }
+  section p { margin: 0 0 1rem; }
+  section p:last-child { margin-bottom: 0; }
+
+  section ul {
+    margin: 0 0 1rem;
+    padding-left: 1.3rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  strong { color: var(--ink); font-weight: 700; }
+
+  .callout {
+    background: var(--paper-alt);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-top: 1.25rem;
+  }
+
+  .callout.strong {
+    border-left-color: var(--barn);
+  }
+  .callout.strong strong { color: var(--barn); }
+
+  footer.doc {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  footer.doc a { color: var(--ink-soft); }
+
+  @media (max-width: 520px) {
+    .wrap { padding: 2.75rem 1.25rem 4rem; }
+    nav.toc { padding: 1.1rem 1.15rem; }
+  }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,560;9..144,650&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<div class="wrap">
+  <header class="doc">
+    <div class="mark">
+      <span class="glyph">B</span>
+      <span class="name">Barnyard Templates</span>
+    </div>
+    <h1>Terms of Service</h1>
+    <p class="stamp">Effective September 3, 2026</p>
+    <p class="lede">The rules that govern buying and using a Barnyard Templates product,
+      including our refund policy and how we handle AI-generated content.</p>
+  </header>
+
+  <nav class="toc" aria-label="Sections">
+    <span class="toc-label">On this page</span>
+    <ol>
+      <li><a href="#who-we-are"><span class="num">01</span>Who we are</a></li>
+      <li><a href="#what-you-buy"><span class="num">02</span>What you're buying</a></li>
+      <li><a href="#not-advice"><span class="num">03</span>Not professional advice</a></li>
+      <li><a href="#ai-content"><span class="num">04</span>AI-generated content</a></li>
+      <li><a href="#payment"><span class="num">05</span>Payment</a></li>
+      <li><a href="#refunds"><span class="num">06</span>Refunds</a></li>
+      <li><a href="#liability"><span class="num">07</span>Limitation of liability</a></li>
+      <li><a href="#warranty"><span class="num">08</span>No warranty</a></li>
+      <li><a href="#law"><span class="num">09</span>Governing law</a></li>
+      <li><a href="#changes"><span class="num">10</span>Changes</a></li>
+      <li><a href="#contact"><span class="num">11</span>Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="who-we-are">
+    <h2><span class="num">01</span>Who we are</h2>
+    <p>Barnyard Templates ("Barnyard," "we," "us") is operated as a sole proprietorship.
+      By purchasing a product or using this site, you agree to these terms. If you don't
+      agree, don't complete a purchase. See our
+      <a href="./privacy.html">Privacy Policy</a> for how we handle your data.</p>
+  </section>
+
+  <section id="what-you-buy">
+    <h2><span class="num">02</span>What you're buying</h2>
+    <p>All products are digital downloads (HTML and/or PDF files), delivered
+      electronically &mdash; there is no physical shipment. Your purchase grants a
+      personal, non-exclusive, non-transferable license to use the file for your own
+      personal use.</p>
+    <p>You may not resell, redistribute, publicly share, or repost the file itself, and
+      you may not use the content to train another AI model, without our prior written
+      permission. You're welcome to use what you learn from a template in your own life
+      &mdash; the restriction is on the file, not the ideas in it.</p>
+  </section>
+
+  <section id="not-advice">
+    <h2><span class="num">03</span>Not professional advice</h2>
+    <p>All Barnyard products are educational only. Nothing in them is financial,
+      investment, tax, legal, medical, or other professional advice, and nothing is
+      personalized to your situation. Each product carries its own specific disclaimer
+      &mdash; read it. You are solely responsible for decisions you make using our
+      content, and we recommend talking to an appropriately licensed professional before
+      acting on anything that matters financially, legally, or otherwise.</p>
+  </section>
+
+  <section id="ai-content">
+    <h2><span class="num">04</span>AI-generated content</h2>
+    <p>Barnyard's products are created with the assistance of AI (Claude) and have not
+      been reviewed by a licensed subject-matter professional before sale. We stand
+      behind the practical usefulness of what we sell, but "AI-generated" is part of what
+      you're buying, plainly stated, not something we bury.</p>
+  </section>
+
+  <section id="payment">
+    <h2><span class="num">05</span>Payment</h2>
+    <p>Payment is processed by <strong>Stripe</strong>. We never see or store your full
+      card number. By purchasing, you also agree to
+      <a href="https://stripe.com/legal/consumer" target="_blank" rel="noopener">Stripe's own terms</a>
+      for the payment itself.</p>
+  </section>
+
+  <section id="refunds">
+    <h2><span class="num">06</span>Refunds</h2>
+    <p><strong>All sales are final. We do not offer refunds for a change of mind</strong>
+      after a product has been successfully delivered &mdash; digital files can be
+      copied the moment they're opened, so "returning" one isn't meaningful the way
+      returning a physical item is.</p>
+    <p>The one exception: if we made the error &mdash; the file wasn't delivered at all,
+      or what you received is genuinely broken (won't open, missing content that was
+      actually advertised on the product page) &mdash; email
+      <a href="mailto:clawopener@gmail.com">clawopener@gmail.com</a> within 14 days of
+      purchase and we'll fix it or refund you. That's a correction of our mistake, not a
+      general refund right, and it's the only case where a refund applies.</p>
+  </section>
+
+  <section id="liability">
+    <h2><span class="num">07</span>Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, Barnyard's total liability for any claim
+      arising from your purchase or use of our products is limited to the amount you
+      paid for that product. We are not liable for indirect, incidental, or
+      consequential damages, including financial losses from decisions made using our
+      educational content.</p>
+  </section>
+
+  <section id="warranty">
+    <h2><span class="num">08</span>No warranty</h2>
+    <p>Products are provided "as is," without warranties of any kind beyond what
+      applicable law requires.</p>
+  </section>
+
+  <section id="law">
+    <h2><span class="num">09</span>Governing law</h2>
+    <p>These terms are governed by the laws of the United States and the state in which
+      Barnyard's operator resides, without regard to conflict-of-law rules, except where
+      applicable consumer-protection law in your own jurisdiction requires otherwise.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">10</span>Changes</h2>
+    <p>We may update these terms as the business changes. If we do, we'll update the
+      effective date at the top of this page. Continuing to use Barnyard's storefront
+      after a change means you've seen it.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">11</span>Contact</h2>
+    <p>Questions about these terms, or a refund request under
+      <a href="#refunds">Section 06</a>, go to
+      <a href="mailto:clawopener@gmail.com">clawopener@gmail.com</a>.</p>
+    <div class="callout strong"><strong>Not legal advice.</strong> These terms were
+      drafted with AI assistance as a reasonable starting point for a small digital
+      products business and have not been reviewed by a licensed attorney. They're
+      published here in good faith, not as a substitute for independent legal review.</div>
+  </section>
+
+  <footer class="doc">
+    <span>Barnyard Templates</span>
+    <span>Last updated September 3, 2026</span>
+  </footer>
+</div>
+</body>
+</html>
