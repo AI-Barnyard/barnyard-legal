@@ -1,0 +1,6 @@
+# Secret delivery paths are deliberately NOT listed here -- robots.txt is public,
+# so naming them would advertise that the directory exists. They are kept out of
+# search indexes via the X-Robots-Tag: noindex header in _headers instead.
+
+User-agent: *
+Allow: /
